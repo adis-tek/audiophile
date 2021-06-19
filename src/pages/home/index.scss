@@ -1,0 +1,21 @@
+@use '../../styles';
+
+.home-container {
+  @include styles.flexCenter(center, column);
+  width: 100vw;
+  z-index: auto;
+  overflow: hidden;
+  .home-body {
+    position: relative;
+    @include styles.flexCenter(center, column);
+    width: 80vw;
+    max-width: 1092px;
+    z-index: 0;
+    @media screen and (max-width: styles.$screen-md-max) {
+      width: 90vw;
+    }
+    @media screen and (max-width: styles.$screen-sm-max) {
+      width: 100vw;
+    }
+  }
+}
