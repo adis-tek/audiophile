@@ -1,0 +1,321 @@
+@use '../../styles';
+
+.home-container {
+  @include styles.flexCenter(center, column);
+  width: 100vw;
+  z-index: auto;
+  overflow: hidden;
+  .home-banner {
+    position: relative;
+    @include styles.flexCenter(center, column);
+    background-image: url("../../assets/home/desktop/image-hero.jpg");
+    width: 100%;
+    height: 730px;
+    max-width: styles.$screen-xl-max;
+  }
+  .banner-text-container {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    width: 75%;
+    height: 60%;
+    .banner-text {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      align-items: flex-start;
+      width: 50%;
+      height: 100%;
+      margin: 120px 0px 0px 0px;
+      .overline {
+        color: styles.$white;
+        opacity: 50%;
+      }
+      .banner-header {
+        color: styles.$white;
+        margin: 0px 0px 0px 0px;
+        text-transform: uppercase;
+      }
+      .banner-body {
+        color: styles.$white;
+        opacity: 75%;
+        width: 75%;
+        margin: 0px 0px 0px 0px;
+      }
+      .banner-button {
+        position: relative;
+        @include styles.flexCenter(center, column);
+        width: 160px;
+        height: 48px;
+        background-color: styles.$orange;
+        margin: 0px 0px 0px 0px;
+        .subtitle {
+          color: styles.$white;
+        }
+      }
+    }
+  }
+  .home-body {
+    position: relative;
+    @include styles.flexCenter(center, column);
+    width: 80vw;
+    max-width: 1092px;
+    z-index: 0;
+    @media screen and (max-width: styles.$screen-md-max) {
+      width: 90vw;
+    }
+    @media screen and (max-width: styles.$screen-sm-max) {
+      width: 100vw;
+    }
+    .product-trio {
+      position: relative;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+      width: 100%;
+      margin: 120px 0px 120px 0px;
+      .product-container {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        background-color: styles.$dark-grey;
+        width: 350px;
+        height: 204px;
+        border-radius: 10px;
+        .text-container {
+          position: relative;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          width: 100%;
+          height: auto;
+          top: -50px;
+          .image {
+            position: relative;
+            width: 123px;
+            height: 160px;
+            object-fit: cover;
+          }
+          .product-header {
+            font-size: 18px;
+            margin: 20px 0px 0px 0px;
+          }
+          .shop {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            letter-spacing: 1px;
+            font-size: 13px;
+            font-weight: 500;
+            margin: 10px 0px 0px 0px;
+            .right-arrow {
+              margin: 0px 0px 0px 10px;
+            }
+          }
+        }
+      }
+    }
+    .zx9-speaker-banner {
+      position: relative;
+      display: flex;
+      flex-direction: row;
+      justify-content: flex-end;
+      align-items: center;
+      background-color: styles.$orange;
+      width: 100%;
+      height: 560px;
+      overflow: hidden;
+      margin: 0px 0px 40px 0px;
+      border-radius: 10px;
+      .zx9-image {
+        position: absolute;
+        bottom: -15px;
+        left: 150px;
+        width: 380px;
+        height: 450px;
+        z-index: 9999;
+        object-fit: cover;
+      }
+      .orange-lines {
+        position: absolute;
+        bottom: -350px;
+        left: -130px;
+        width: 944px;
+        height: 944px;
+        object-fit: cover;
+      }
+      .text-container {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: flex-start;
+        width: 30%;
+        height: 305px;
+        margin: 0px 90px 0px 0px;
+      }
+      .banner-header {
+        color: styles.$white;
+        margin: 0px 0px 0px 0px;
+        text-transform: uppercase;
+      }
+      .banner-body {
+        color: styles.$white;
+        opacity: 75%;
+        width: 100%;
+        margin: 0px 0px 0px 0px;
+      }
+      .banner-button {
+        position: relative;
+        @include styles.flexCenter(center, column);
+        width: 160px;
+        height: 48px;
+        background-color: styles.$black;
+        margin: 0px 0px 0px 0px;
+        .subtitle {
+          color: styles.$white;
+        }
+      }
+    }
+    .zx7-speaker-banner {
+      position: relative;
+      display: flex;
+      flex-direction: row;
+      justify-content: flex-start;
+      align-items: center;
+      background-color: styles.$dark-grey;
+      width: 100%;
+      height: 320px;
+      overflow: hidden;
+      margin: 0px 0px 40px 0px;
+      border-radius: 10px;
+      .zx7-image {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        z-index: 0;
+        object-fit: cover;
+      }
+      .orange-lines {
+        position: absolute;
+        bottom: -350px;
+        left: -130px;
+        width: 944px;
+        height: 944px;
+        object-fit: cover;
+      }
+      .text-container {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: flex-start;
+        width: 30%;
+        height: auto;
+        margin: 0px 0px 0px 90px;
+      }
+      .banner-header {
+        color: styles.$black;
+        font-size: 28px;
+        margin: 0px 0px 0px 0px;
+        text-transform: uppercase;
+      }
+      .banner-button {
+        position: relative;
+        @include styles.flexCenter(center, column);
+        width: 160px;
+        height: 48px;
+        background-color: transparent;
+        border: 2px solid styles.$black;
+        margin: 30px 0px 0px 0px;
+        .subtitle {
+          color: styles.$black;
+        }
+      }
+    }
+    .yx1-speaker-banner {
+      position: relative;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+      width: 100%;
+      height: 320px;
+      overflow: hidden;
+      margin: 0px 0px 120px 0px;
+      .yx1-image {
+        position: relative;
+        height: 100%;
+        z-index: 0;
+        object-fit: cover;
+        border-radius: 10px;
+      }
+      .text-container-background {
+        position: relative;
+        @include styles.flexCenter(center, column);
+        background-color: styles.$dark-grey;
+        height: 100%;
+        width: 45%;
+        border-radius: 10px;
+      }
+      .text-container {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: flex-start;
+        width: 90%;
+        height: auto;
+        margin: 0px 0px 0px 120px;
+      }
+      .banner-header {
+        color: styles.$black;
+        font-size: 28px;
+        margin: 0px 0px 0px 0px;
+        text-transform: uppercase;
+      }
+      .banner-button {
+        position: relative;
+        @include styles.flexCenter(center, column);
+        width: 160px;
+        height: 48px;
+        background-color: transparent;
+        border: 2px solid styles.$black;
+        margin: 30px 0px 0px 0px;
+        .subtitle {
+          color: styles.$black;
+        }
+      }
+    }
+    .best-gear-container {
+      position: relative;
+      @include styles.flexCenter(space-between, row);
+      height: auto;
+      margin: 0px 0px 120px 0px;
+      .text-container {
+        position: relative;
+        width: 40%;
+        height: 100%;
+        .best-gear-heading {
+          position: relative;
+          text-transform: uppercase;
+          width: 100%;
+          .highlight {
+            color: styles.$orange;
+          }
+        }
+        .best-gear-body {
+          margin: 30px 0px 0px 0px;
+        }
+      }
+      .best-gear-image {
+        position: relative;
+        width: 45%;
+      }
+    }
+  }
+}
