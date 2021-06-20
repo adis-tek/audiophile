@@ -1,0 +1,40 @@
+@use '../../styles';
+
+.earphones-container {
+  @include styles.flexCenter(center, column);
+  width: 100vw;
+  z-index: auto;
+  overflow: hidden;
+  .earphones-container-header {
+    @include styles.flexCenter(center, column);
+    width: 100vw;
+    height: 336px;
+    background-color: styles.$black;
+    z-index: auto;
+    overflow: hidden;
+    margin: 0px 0px 200px 0px;
+    .earphones-banner {
+      position: relative;
+      color: styles.$white;
+      bottom: -50px;
+      .banner-header {
+        position: relative;
+      }
+    }
+  }
+  .earphones-body {
+    position: relative;
+    @include styles.flexCenter(center, column);
+    width: 80vw;
+    max-width: 1092px;
+    z-index: 0;
+    @media screen and (max-width: styles.$screen-md-max) {
+      width: 90vw;
+    }
+    @media screen and (max-width: styles.$screen-sm-max) {
+      width: 100vw;
+    }
+    @include styles.productRowLeft;
+    @include styles.productRowRight;
+  }
+}

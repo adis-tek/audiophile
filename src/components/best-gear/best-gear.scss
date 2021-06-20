@@ -1,0 +1,28 @@
+@use '../../styles';
+
+.best-gear-container {
+  position: relative;
+  @include styles.flexCenter(space-between, row);
+  height: auto;
+  margin: 0px 0px 120px 0px;
+  .text-container {
+    position: relative;
+    width: 40%;
+    height: 100%;
+    .best-gear-heading {
+      position: relative;
+      text-transform: uppercase;
+      width: 100%;
+      .highlight {
+        color: styles.$orange;
+      }
+    }
+    .best-gear-body {
+      margin: 30px 0px 0px 0px;
+    }
+  }
+  .best-gear-image {
+    position: relative;
+    width: 45%;
+  }
+}

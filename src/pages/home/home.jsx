@@ -1,5 +1,7 @@
 import React from 'react';
 import './home.scss';
+import ProductTrio from '../../components/product-trio/productTrio';
+import BestGear from '../../components/best-gear/bestGear';
 import RightArrow from '../../assets/shared/desktop/icon-arrow-right.svg';
 import HeadPhones from '../../assets/shared/desktop/image-headphones.png';
 import Speaker from '../../assets/shared/desktop/image-speakers.png';
@@ -37,29 +39,7 @@ function home() {
                 </div>
         </div>
             <body className="home-body">
-                <div className="product-trio">
-                    <div className="product-container">
-                        <div className="text-container">
-                        <img src={HeadPhones} alt="headphones" className="image" />
-                            <h4 className="product-header">HEADPHONES</h4>
-                            <p className="shop">SHOP <img src={RightArrow} alt="right-arrow" className="right-arrow" /></p>
-                        </div>
-                    </div>
-                    <div className="product-container">
-                        <div className="text-container">
-                        <img src={Speaker} alt="headphones" className="image" />
-                            <h4 className="product-header">SPEAKERS</h4>
-                            <p className="shop">SHOP <img src={RightArrow} alt="right-arrow" className="right-arrow" /></p>
-                        </div>
-                    </div>
-                    <div className="product-container">
-                        <div className="text-container">
-                        <img src={Earphones} alt="headphones" className="image" />
-                            <h4 className="product-header">EARPHONES</h4>
-                            <p className="shop">SHOP <img src={RightArrow} alt="right-arrow" className="right-arrow" /></p>
-                        </div>
-                    </div>
-                </div>
+            <ProductTrio />
                 <div className="zx9-speaker-banner">
                     <img src={ZX9} alt="zx9 speaker" className="zx9-image" />
                     <img src={OrangeLines} alt="Orange Lines" className="orange-lines" />
@@ -91,17 +71,7 @@ function home() {
                     </div>
                 </div>
                 </div>
-                <div className="best-gear-container">
-                    <div className="text-container">
-                    <h2 className="best-gear-heading">Bringing you the <span class="highlight">best</span> audio gear</h2>
-                    <p className="best-gear-body">Located at the heart of New York City, Audiophile is the premier store for high end headphones, 
-                    earphones, speakers, and audio accessories. We have a large showroom and luxury demonstration 
-                    rooms available for you to browse and experience a wide range of our products. Stop by our store 
-                    to meet some of the fantastic people who make Audiophile the best place to buy your portable 
-                    audio equipment.</p>
-                    </div>
-                    <img src={Listener} alt="listener" className="best-gear-image" />
-                </div>
+                <BestGear />
             </body>
             </div>
     </>

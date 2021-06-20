@@ -1,0 +1,51 @@
+@use '../../styles';
+
+.product-trio {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  margin: 120px 0px 120px 0px;
+  .product-container {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    background-color: styles.$dark-grey;
+    width: 350px;
+    height: 204px;
+    border-radius: 10px;
+    .text-container {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 100%;
+      height: auto;
+      top: -50px;
+      .image {
+        position: relative;
+        width: 123px;
+        height: 160px;
+        object-fit: cover;
+      }
+      .product-header {
+        font-size: 18px;
+        margin: 20px 0px 0px 0px;
+      }
+      .shop {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        letter-spacing: 1px;
+        font-size: 13px;
+        font-weight: 500;
+        margin: 10px 0px 0px 0px;
+        .right-arrow {
+          margin: 0px 0px 0px 10px;
+        }
+      }
+    }
+  }
+}
