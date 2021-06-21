@@ -3,6 +3,14 @@ import './x99-mark-two.scss';
 import ProductTrio from '../../components/product-trio/productTrio';
 import BestGear from '../../components/best-gear/bestGear';
 import MarkII from '../../assets/product-xx99-mark-two-headphones/desktop/image-product.jpg';
+import Gallery1 from '../../assets/product-xx99-mark-two-headphones/desktop/image-gallery-1.jpg';
+import Gallery2 from '../../assets/product-xx99-mark-two-headphones/desktop/image-gallery-2.jpg';
+import Gallery3 from '../../assets/product-xx99-mark-two-headphones/desktop/image-gallery-3.jpg';
+import Suggestion1 from '../../assets//shared/desktop/image-xx99-mark-one-headphones.jpg';
+import Suggestion2 from '../../assets//shared/desktop/image-xx59-headphones.jpg';
+import Suggestion3 from '../../assets//shared/desktop/image-zx9-speaker.jpg';
+
+
 
 function x99MarkTwo() {
     return (
@@ -22,17 +30,95 @@ function x99MarkTwo() {
                 <img src={MarkII} alt="headphones" className="product-image" />
                 <div className="text-container">
                 <p className="overline">NEW PRODUCT</p>
-                        <h1 className="banner-header">XX99 Mark II Headphones</h1>
+                        <h2 className="banner-header">XX99 Mark II Headphones</h2>
                         <p className="banner-body">The new XX99 Mark II headphones is the pinnacle of pristine audio. It redefines your premium 
                         headphone experience by reproducing the balanced depth and precision of studio-quality sound.</p>
+                        <h4 className="price">$2,999</h4>
                         <div className="button-container">
-                        <button className="quantity-button-container">
-                            
-                        </button>
+                            <button className="quantity-button-container">
+                                <h4 className="minus">-</h4>
+                                <h4 className="quantity">1</h4>
+                                <h4 className="plus">+</h4>
+                            </button>
                         <button className="banner-button">
                             <p className="subtitle">SEE PRODUCT</p>
                         </button>
                         </div>
+                </div>
+            </div>
+            <div className="product-description-container">
+                <div className="features-container">
+                    <h3 className="features-header">FEATURES</h3>
+                    <p className="body">Featuring a genuine leather head strap and premium earcups, these headphones deliver superior 
+                    comfort for those who like to enjoy endless listening. It includes intuitive controls designed 
+                    for any situation. Whether you’re taking a business call or just in your own personal space, the 
+                    auto on/off and pause features ensure that you’ll never miss a beat.</p>
+                    <p className="body">The advanced Active Noise Cancellation with built-in equalizer allow you to experience your audio 
+                    world on your terms. It lets you enjoy your audio in peace, but quickly interact with your surroundings 
+                    when you need to. Combined with Bluetooth 5. 0 compliant connectivity and 17 hour battery life, the 
+                    XX99 Mark II headphones gives you superior sound, cutting-edge technology, and a modern design aesthetic.</p>
+                </div>
+                <div className="box-container">
+                    <div className="box-header-container">
+                    <h3 className="box-header">IN THE BOX</h3>
+                    </div>
+                    <div className="items-container">
+                        <div className="pair-container">
+                            <h5 className="item-quantity">1x</h5>
+                            <p className="item">Headphone unit</p>
+                        </div>
+                        <div className="pair-container">
+                            <h5 className="item-quantity">2x</h5>
+                            <p className="item">Replacement earcups</p>
+                        </div>
+                        <div className="pair-container">
+                            <h5 className="item-quantity">1x</h5>
+                            <p className="item">User Manual</p>
+                        </div>
+                        <div className="pair-container">
+                            <h5 className="item-quantity">1x</h5>
+                            <p className="item">3.5mm 5m Audio Cable</p>
+                        </div>
+                        <div className="pair-container">
+                            <h5 className="item-quantity">1x</h5>
+                            <p className="item">Travel Bag</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div className="gallery-container">
+                <div className="double-photos-container">
+                <img src={Gallery1} alt="Product Photo" className="double-photo" />
+                <img src={Gallery2} alt="Product Photo" className="double-photo" />
+                </div>
+                <div className="single-photo-container">
+                <img src={Gallery3} alt="Product Photo" className="single-photo" />
+                </div>
+            </div>
+            <div className="suggestions-container">
+                <h3 className="suggestions-header">YOU MAY ALSO LIKE</h3>
+                <div className="suggestions-trio">
+                    <div className="suggestion">
+                        <img src={Suggestion1} alt="XX99 Mark I headphones" className="suggestion-image" />
+                        <h3 className="product-title">XX99 MARK I</h3>
+                        <button className="banner-button">
+                            <p className="subtitle">SEE PRODUCT</p>
+                        </button>
+                    </div>
+                    <div className="suggestion">
+                        <img src={Suggestion2} alt="XX99 Mark I headphones" className="suggestion-image" />
+                        <h3 className="product-title">XX99 MARK I</h3>
+                        <button className="banner-button">
+                            <p className="subtitle">SEE PRODUCT</p>
+                        </button>
+                    </div>
+                    <div className="suggestion">
+                        <img src={Suggestion3} alt="XX99 Mark I headphones" className="suggestion-image" />
+                        <h3 className="product-title">XX99 MARK I</h3>
+                        <button className="banner-button">
+                            <p className="subtitle">SEE PRODUCT</p>
+                        </button>
+                    </div>
                 </div>
             </div>
             <ProductTrio />
@@ -43,4 +129,4 @@ function x99MarkTwo() {
     )
 }
 
-export default x99MarkTwo
+export default x99MarkTwo;

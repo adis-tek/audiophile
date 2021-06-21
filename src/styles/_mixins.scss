@@ -98,3 +98,85 @@
     }
   }
 }
+
+@mixin productRowLeftProductPage {
+  .product-row-container-left {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 560px;
+    margin: 0px 0px 120px 0px;
+    .product-image {
+      position: relative;
+      width: 50%;
+      height: auto;
+      object-fit: cover;
+    }
+    .text-container {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: flex-start;
+      width: 40%;
+      height: 380px;
+      .overline {
+        color: rgb(216, 125, 74);
+      }
+      .banner-header {
+        position: relative;
+      }
+      .banner-body {
+        position: relative;
+      }
+      .price {
+        position: relative;
+        margin: 15px 0px;
+      }
+      .button-container {
+        position: relative;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: flex-start;
+        width: 66%;
+        height: auto;
+        .quantity-button-container {
+          position: relative;
+          display: flex;
+          flex-direction: row;
+          justify-content: space-around;
+          align-items: center;
+          width: 120px;
+          height: 48px;
+          background-color: rgb(241, 241, 241);
+          margin: 0px 20px 0px 0px;
+          .minus {
+            position: relative;
+            opacity: 25%;
+          }
+          .quantity {
+            position: relative;
+            font-weight: 700;
+          }
+          .plus {
+            position: relative;
+            opacity: 25%;
+          }
+        }
+        .banner-button {
+          position: relative;
+          background-color: rgb(216, 125, 74);
+          width: 160px;
+          height: 48px;
+          .subtitle {
+            color: rgb(255, 255, 255);
+          }
+        }
+      }
+    }
+  }
+}
