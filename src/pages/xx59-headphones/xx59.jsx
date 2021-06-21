@@ -1,18 +1,18 @@
 import React from 'react';
-import './x99-mark-two.scss';
+import './xx59.scss';
 import ProductTrio from '../../components/product-trio/productTrio';
 import BestGear from '../../components/best-gear/bestGear';
-import MarkII from '../../assets/product-xx99-mark-two-headphones/desktop/image-product.jpg';
-import Gallery1 from '../../assets/product-xx99-mark-two-headphones/desktop/image-gallery-1.jpg';
-import Gallery2 from '../../assets/product-xx99-mark-two-headphones/desktop/image-gallery-2.jpg';
-import Gallery3 from '../../assets/product-xx99-mark-two-headphones/desktop/image-gallery-3.jpg';
-import Suggestion1 from '../../assets//shared/desktop/image-xx99-mark-one-headphones.jpg';
-import Suggestion2 from '../../assets//shared/desktop/image-xx59-headphones.jpg';
+import XX59 from '../../assets/product-xx59-headphones/desktop/image-product.jpg';
+import Gallery1 from '../../assets/product-xx59-headphones/desktop/image-gallery-1.jpg';
+import Gallery2 from '../../assets/product-xx59-headphones/desktop/image-gallery-2.jpg';
+import Gallery3 from '../../assets/product-xx59-headphones/desktop/image-gallery-3.jpg';
+import Suggestion1 from '../../assets//shared/desktop/image-xx99-mark-two-headphones.jpg';
+import Suggestion2 from '../../assets//shared/desktop/image-xx99-mark-one-headphones.jpg';
 import Suggestion3 from '../../assets//shared/desktop/image-zx9-speaker.jpg';
 
 
 
-function x99MarkTwo() {
+function xx59() {
     return (
 <>
 <div className="headphones-container">
@@ -24,18 +24,15 @@ function x99MarkTwo() {
     
     <title>Headphones</title>
     </head>
-        <body className="headphones-body">
-            <div className="go-back-container">
-                <p className="go-back-text">Go Back</p>
-            </div>
+        <body className="headphones-body"> 
+
             <div className="product-row-container-left">
-                <img src={MarkII} alt="headphones" className="product-image" />
+                <img src={XX59} alt="headphones" className="product-image" />
                 <div className="text-container">
-                <p className="overline">NEW PRODUCT</p>
-                        <h2 className="banner-header">XX99 Mark II Headphones</h2>
-                        <p className="banner-body">The new XX99 Mark II headphones is the pinnacle of pristine audio. It redefines your premium 
-                        headphone experience by reproducing the balanced depth and precision of studio-quality sound.</p>
-                        <h4 className="price">$2,999</h4>
+                        <h2 className="banner-header">XX59 Headphones</h2>
+                        <p className="banner-body">Enjoy your audio almost anywhere and customize it to your specific tastes with the XX59 headphones. 
+                        The stylish yet durable versatile wireless headset is a brilliant companion at home or on the move.</p>
+                        <h4 className="price">$899</h4>
                         <div className="button-container">
                             <button className="quantity-button-container">
                                 <h4 className="minus">-</h4>
@@ -51,14 +48,13 @@ function x99MarkTwo() {
             <div className="product-description-container">
                 <div className="features-container">
                     <h3 className="features-header">FEATURES</h3>
-                    <p className="body">Featuring a genuine leather head strap and premium earcups, these headphones deliver superior 
-                    comfort for those who like to enjoy endless listening. It includes intuitive controls designed 
-                    for any situation. Whether you’re taking a business call or just in your own personal space, the 
-                    auto on/off and pause features ensure that you’ll never miss a beat.</p>
-                    <p className="body">The advanced Active Noise Cancellation with built-in equalizer allow you to experience your audio 
-                    world on your terms. It lets you enjoy your audio in peace, but quickly interact with your surroundings 
-                    when you need to. Combined with Bluetooth 5. 0 compliant connectivity and 17 hour battery life, the 
-                    XX99 Mark II headphones gives you superior sound, cutting-edge technology, and a modern design aesthetic.</p>
+                    <p className="body">These headphones have been created from durable, high-quality materials tough enough to take anywhere. Its compact
+                    folding design fuses comfort and minimalist style making it perfect for travel. Flawless transmission is assured by the
+                    latest wireless technology engineered for audio synchronization with videos.</p>
+                    <p className="body">More than a simple pair of headphones, this headset features a pair of built-in microphones for clear, hands-free
+                    calling when paired with a compatible smartphone. Controlling music and calls is also intuitive thanks to easy-access
+                    touch buttons on the earcups. Regardless of how you use the XX59 headphones, you can do so all day thanks to an
+                    impressive 30-hour battery life that can be rapidly recharged via USB-C.</p>
                 </div>
                 <div className="box-container">
                     <div className="box-header-container">
@@ -102,7 +98,7 @@ function x99MarkTwo() {
                 <div className="suggestions-trio">
                     <div className="suggestion">
                         <img src={Suggestion1} alt="XX99 Mark I headphones" className="suggestion-image" />
-                        <h3 className="product-title">XX99 MARK I</h3>
+                        <h3 className="product-title">XX99 MARK II</h3>
                         <button className="banner-button">
                             <p className="subtitle">SEE PRODUCT</p>
                         </button>
@@ -116,7 +112,7 @@ function x99MarkTwo() {
                     </div>
                     <div className="suggestion">
                         <img src={Suggestion3} alt="XX99 Mark I headphones" className="suggestion-image" />
-                        <h3 className="product-title">XX99 MARK I</h3>
+                        <h3 className="product-title">ZX9 SPEAKER</h3>
                         <button className="banner-button">
                             <p className="subtitle">SEE PRODUCT</p>
                         </button>
@@ -131,4 +127,4 @@ function x99MarkTwo() {
     )
 }
 
-export default x99MarkTwo;
+export default xx59;

@@ -1,18 +1,18 @@
 import React from 'react';
-import './x99-mark-two.scss';
+import './zx7.scss';
 import ProductTrio from '../../components/product-trio/productTrio';
 import BestGear from '../../components/best-gear/bestGear';
-import MarkII from '../../assets/product-xx99-mark-two-headphones/desktop/image-product.jpg';
-import Gallery1 from '../../assets/product-xx99-mark-two-headphones/desktop/image-gallery-1.jpg';
-import Gallery2 from '../../assets/product-xx99-mark-two-headphones/desktop/image-gallery-2.jpg';
-import Gallery3 from '../../assets/product-xx99-mark-two-headphones/desktop/image-gallery-3.jpg';
-import Suggestion1 from '../../assets//shared/desktop/image-xx99-mark-one-headphones.jpg';
-import Suggestion2 from '../../assets//shared/desktop/image-xx59-headphones.jpg';
-import Suggestion3 from '../../assets//shared/desktop/image-zx9-speaker.jpg';
+import ZX7 from '../../assets/product-zx7-speaker/desktop/image-product.jpg';
+import Gallery1 from '../../assets/product-zx7-speaker/desktop/image-gallery-1.jpg';
+import Gallery2 from '../../assets/product-zx7-speaker/desktop/image-gallery-2.jpg';
+import Gallery3 from '../../assets/product-zx7-speaker/desktop/image-gallery-3.jpg';
+import Suggestion1 from '../../assets//shared/desktop/image-zx9-speaker.jpg';
+import Suggestion2 from '../../assets//shared/desktop/image-xx99-mark-one-headphones.jpg';
+import Suggestion3 from '../../assets//shared/desktop/image-xx59-headphones.jpg';
 
 
 
-function x99MarkTwo() {
+function zx7() {
     return (
 <>
 <div className="headphones-container">
@@ -25,17 +25,14 @@ function x99MarkTwo() {
     <title>Headphones</title>
     </head>
         <body className="headphones-body">
-            <div className="go-back-container">
-                <p className="go-back-text">Go Back</p>
-            </div>
+
             <div className="product-row-container-left">
-                <img src={MarkII} alt="headphones" className="product-image" />
+                <img src={ZX7} alt="headphones" className="product-image" />
                 <div className="text-container">
-                <p className="overline">NEW PRODUCT</p>
-                        <h2 className="banner-header">XX99 Mark II Headphones</h2>
-                        <p className="banner-body">The new XX99 Mark II headphones is the pinnacle of pristine audio. It redefines your premium 
-                        headphone experience by reproducing the balanced depth and precision of studio-quality sound.</p>
-                        <h4 className="price">$2,999</h4>
+                        <h2 className="banner-header">ZX7 SPEAKER</h2>
+                        <p className="banner-body">Stream high quality sound wirelessly with minimal to no loss. The ZX7 speaker uses high-end 
+                        audiophile components that represents the top of the line powered speakers for home or studio use.</p>
+                        <h4 className="price">$3,500</h4>
                         <div className="button-container">
                             <button className="quantity-button-container">
                                 <h4 className="minus">-</h4>
@@ -51,14 +48,14 @@ function x99MarkTwo() {
             <div className="product-description-container">
                 <div className="features-container">
                     <h3 className="features-header">FEATURES</h3>
-                    <p className="body">Featuring a genuine leather head strap and premium earcups, these headphones deliver superior 
-                    comfort for those who like to enjoy endless listening. It includes intuitive controls designed 
-                    for any situation. Whether you’re taking a business call or just in your own personal space, the 
-                    auto on/off and pause features ensure that you’ll never miss a beat.</p>
-                    <p className="body">The advanced Active Noise Cancellation with built-in equalizer allow you to experience your audio 
-                    world on your terms. It lets you enjoy your audio in peace, but quickly interact with your surroundings 
-                    when you need to. Combined with Bluetooth 5. 0 compliant connectivity and 17 hour battery life, the 
-                    XX99 Mark II headphones gives you superior sound, cutting-edge technology, and a modern design aesthetic.</p>
+                    <p className="body">Reap the advantages of a flat diaphragm tweeter cone. This provides a fast response rate and 
+                    excellent high frequencies that lower tiered bookshelf speakers cannot provide. The woofers are made 
+                    from aluminum that produces a unique and clear sound. XLR inputs allow you to connect to a mixer for 
+                    more advanced usage.</p>
+                    <p className="body">The ZX7 speaker is the perfect blend of stylish design and high performance. It houses an encased MDF 
+                    wooden enclosure which minimises acoustic resonance. Dual connectivity allows pairing through bluetooth 
+                    or traditional optical and RCA input. Switch input sources and control volume at your finger tips with 
+                    the included wireless remote. This versatile speaker is equipped to deliver an authentic listening experience.</p>
                 </div>
                 <div className="box-container">
                     <div className="box-header-container">
@@ -66,12 +63,12 @@ function x99MarkTwo() {
                     </div>
                     <div className="items-container">
                         <div className="pair-container">
-                            <h5 className="item-quantity">1x</h5>
-                            <p className="item">Headphone unit</p>
+                            <h5 className="item-quantity">2x</h5>
+                            <p className="item">Speaker unit</p>
                         </div>
                         <div className="pair-container">
                             <h5 className="item-quantity">2x</h5>
-                            <p className="item">Replacement earcups</p>
+                            <p className="item">Speaker Cloth Panel</p>
                         </div>
                         <div className="pair-container">
                             <h5 className="item-quantity">1x</h5>
@@ -79,11 +76,11 @@ function x99MarkTwo() {
                         </div>
                         <div className="pair-container">
                             <h5 className="item-quantity">1x</h5>
-                            <p className="item">3.5mm 5m Audio Cable</p>
+                            <p className="item">3.5mm 7.5m Audio Cable</p>
                         </div>
                         <div className="pair-container">
                             <h5 className="item-quantity">1x</h5>
-                            <p className="item">Travel Bag</p>
+                            <p className="item">7.5mm Optical Cable</p>
                         </div>
                     </div>
                 </div>
@@ -102,7 +99,7 @@ function x99MarkTwo() {
                 <div className="suggestions-trio">
                     <div className="suggestion">
                         <img src={Suggestion1} alt="XX99 Mark I headphones" className="suggestion-image" />
-                        <h3 className="product-title">XX99 MARK I</h3>
+                        <h3 className="product-title">ZX9 SPEAKER</h3>
                         <button className="banner-button">
                             <p className="subtitle">SEE PRODUCT</p>
                         </button>
@@ -116,7 +113,7 @@ function x99MarkTwo() {
                     </div>
                     <div className="suggestion">
                         <img src={Suggestion3} alt="XX99 Mark I headphones" className="suggestion-image" />
-                        <h3 className="product-title">XX99 MARK I</h3>
+                        <h3 className="product-title">XX59</h3>
                         <button className="banner-button">
                             <p className="subtitle">SEE PRODUCT</p>
                         </button>
@@ -131,4 +128,4 @@ function x99MarkTwo() {
     )
 }
 
-export default x99MarkTwo;
+export default zx7;
