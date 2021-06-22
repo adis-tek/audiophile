@@ -11,6 +11,7 @@ import XX59 from './pages/xx59-headphones/xx59.jsx';
 import ZX9 from './pages/zx9-speaker/zx9.jsx';
 import ZX7 from './pages/zx7-speaker/zx7.jsx';
 import YX1 from './pages/yx1-earphones/yx1.jsx';
+import Checkout from './pages/checkout/checkout.jsx'
 
 function App() {
   return (
@@ -27,6 +28,7 @@ function App() {
         <Route exact path="/speakers/zx7" component={ZX7} />
       <Route exact path="/earphones" component={Earphones} />
         <Route exact path="/earphones/yx1" component={YX1} />
+      <Route exact path="/checkout" component={Checkout} />
       </Switch>
     </Router>
     </div>
