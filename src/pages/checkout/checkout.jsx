@@ -48,6 +48,7 @@ function checkout() {
 
                 </form>
             </div>
+            
             <div className="summary-container">
                 <h3 className="summary">SUMMARY</h3>
                 <button className="pay-button">
