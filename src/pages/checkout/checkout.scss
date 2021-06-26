@@ -32,7 +32,7 @@
         flex-direction: column;
         align-items: flex-start;
         justify-content: flex-start;
-        width: 60%;
+        width: 70%;
         height: 100%;
         .checkout-form-container {
           position: relative;
@@ -49,7 +49,9 @@
           }
           .checkout-subheader {
             color: styles.$orange;
-            margin: 60px 0px 25px 0px;
+            font-size: 13px;
+            font-weight: bold;
+            margin: 60px 0px 0px 0px;
           }
           .billing-details-form {
             position: relative;
@@ -57,7 +59,16 @@
             flex-direction: column;
             width: 100%;
             height: auto;
-            .double-input {
+            @include styles.formLabelInput;
+          }
+          .address-form {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            height: auto;
+            margin: 20px 0px 0px 0px;
+            .single-input {
               position: relative;
               display: flex;
               flex-direction: row;
@@ -68,39 +79,133 @@
               .input-container {
                 position: relative;
                 display: flex;
-                flex-direction: column;
-                width: 48.5%;
+                flex-direction: row;
+                justify-content: flex-start;
+                width: 100%;
                 height: auto;
+                label {
+                  display: inline-block;
+                  font-size: 12px;
+                  font-weight: 700;
+                  color: black;
+                  margin: -20px 0px 0px 0px;
+                  padding: 0;
+                  width: 0%;
+                }
                 input {
                   display: inline-block;
                   line-height: 0;
                   width: 100%;
-                  margin: -5px 0px 0px 0px;
+                  height: 56px;
+                  margin: 0px 0px 0px 0px;
                   padding: 0;
+                  border-radius: 7.5px;
+                  border: 1px solid rgba(0, 0, 0, 0.2);
                 }
-                label {
-                  display: inline-block;
-                  width: 100%;
-                  margin: 0px 0px 10px 0px;
-                  padding: 0;
+                input:focus {
+                  font-size: 14px;
+                  font-weight: 700;
+                  padding: 0px 0px 0px 20px;
+                }
+                input:not(:focus) {
+                  font-size: 14px;
+                  font-weight: 700;
+                  padding: 0px 0px 0px 20px;
                 }
               }
             }
-          }
-          .address-form {
+            @include styles.formLabelInput;
           }
           .payment-details-form {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            height: auto;
+            .payment {
+              display: inline-block;
+              font-size: 12px;
+              font-weight: 700;
+              color: black;
+              margin: 20px 0px 5px 0px;
+              padding: 0;
+              width: 100%;
+            }
+            .radio-container {
+              position: relative;
+              display: flex;
+              flex-direction: column;
+              align-items: flex-end;
+              width: 100%;
+              margin: -30px 0px 0px 0px;
+              .double-checkbox {
+                position: relative;
+                display: flex;
+                flex-direction: row;
+                justify-content: flex-start;
+                align-items: center;
+                width: 50%;
+                height: 56px;
+                border-radius: 7.5px;
+                border: 1px solid rgba(0, 0, 0, 0.25);
+                margin: 7.5px 0px;
+                label {
+                  position: relative;
+                  font-size: 14px;
+                  font-weight: 700;
+                  margin: 0px 0px 0px 0px;
+                }
+                .custom-checkbox {
+                  display: flex;
+                  justify-content: center;
+                  align-items: center;
+                  width: 20px;
+                  height: 20px;
+                  border: 1px solid rgba(0, 0, 0, 0.2);
+                  border-radius: 50%;
+                  margin: 0px 15px 0px 20px;
+                  input:checked + .checkmark {
+                    display: inline-block;
+                    width: calc(80% - 6px);
+                    height: calc(80% - 6px);
+                    background-color: #222;
+                    border-radius: 50%;
+                    background-color: styles.$orange;
+                  }
+                  input {
+                    display: none;
+                  }
+                }
+              }
+            }
+            .cash-delivery-exclaimer {
+              position: relative;
+              display: flex;
+              flex-direction: row;
+              justify-content: center;
+              align-items: center;
+              margin: 10px 0px 0px 0px;
+              .cash-image {
+                width: 48px;
+                height: 48px;
+                margin: 0px 30px 0px 0px;
+              }
+              .cash-explaination {
+                opacity: 0.75;
+              }
+            }
           }
         }
-      }
-      .summary-container {
-        position: relative;
-        display: flex;
-        flex-direction: column;
-        width: 40%;
-        height: auto;
-        background: styles.$white;
+        @include styles.formLabelInput;
       }
     }
+  }
+  .summary-container {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    width: 30%;
+    height: auto;
+    background: styles.$white;
   }
 }

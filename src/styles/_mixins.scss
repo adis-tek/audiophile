@@ -382,3 +382,55 @@
     }
   }
 }
+
+/* Checkout */
+
+@mixin formLabelInput {
+  .double-input {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+    height: auto;
+    margin: 20px 0px 0px 0px;
+    .input-container {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      width: 48.5%;
+      height: auto;
+      input {
+        display: inline-block;
+        line-height: 0;
+        width: 100%;
+        height: 56px;
+        margin: -5px 0px 0px 0px;
+        padding: 0px 0px 0px 0px;
+        text-indent: 20px;
+        border-radius: 7.5px;
+        border: 1px solid rgba(0, 0, 0, 0.2);
+      }
+      input:focus {
+        font-size: 14px;
+        font-weight: 700;
+        padding: 0px 0px 0px 0px;
+        border: 1px solid rgba(216, 125, 74, 0.2);
+      }
+      input:not(:focus) {
+        font-size: 14px;
+        font-weight: 700;
+        padding: 0px 0px 0px 0px;
+      }
+      label {
+        display: inline-block;
+        font-size: 12px;
+        font-weight: 700;
+        color: black;
+        margin: 0px 0px 10px 0px;
+        padding: 0;
+        width: 100%;
+      }
+    }
+  }
+}

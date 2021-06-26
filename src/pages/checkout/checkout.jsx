@@ -1,7 +1,20 @@
-import React from 'react';
+import React, {useState} from 'react';
 import './checkout.scss';
+import cash from '../../assets/checkout/cashOnDelivery.svg';
 
-function checkout() {
+function Checkout() {
+    const [eMoney, setEMoney] = useState(true);
+    const [cashOnDelivery, setCashOnDelivery] = useState(false);
+
+    function eMoneyClick() {
+        setEMoney(true);
+        setCashOnDelivery(false);
+    }
+
+    function cashClick() {
+        setEMoney(false);
+        setCashOnDelivery(true);
+    }
     return (
     <>
     <div className="checkout-container">
@@ -40,33 +53,71 @@ function checkout() {
 
                 <h4 className="checkout-subheader">SHIPPING INFO</h4>
                 <form className="address-form">
+                <div className="single-input">
+                <div className="input-container">
                 <label for="address">Address</label>
                 <input type="text" name="address" placeholder="1137 Williams Avenue" required></input>
-
-                <div className="double-input">
-                <label for="zip">Zip Code</label>
-                <input name="zip" type="text" pattern="[0-9]*" placeholder="10001" required></input>
-
-                <label for="city">City</label>
-                <input type="text" name="city" placeholder="New York" required></input>
+                </div>
                 </div>
 
                 <div className="double-input">
+                <div className="input-container">
+                <label for="zip">Zip Code</label>
+                <input name="zip" type="text" pattern="[0-9]*" placeholder="10001" required></input>
+                </div>
+                <div className="input-container">
+                <label for="city">City</label>
+                <input type="text" name="city" placeholder="New York" required></input>
+                </div>
+                </div>
+
+                <div className="double-input">
+                <div className="input-container">
                 <label for="country">Country</label>
                 <input type="text" name="country" placeholder="United States" required></input>
+                </div>
                 </div>
                 </form>
                 <h4 className="checkout-subheader">PAYMENT DETAILS</h4>
                 <form className="payment-details-form">
-                <label for="payment">Payment Method</label>
+                <label for="payment" className="payment">Payment Method</label>
+                <div className="radio-container">
+                <div className="double-checkbox">
+                <label className="custom-checkbox" onClick={eMoneyClick}>
                 <input type="radio" name="payment method"></input>
+                <span className="checkmark"></span>
+                </label>
                 <label>e-Money</label>
+                </div>
+                <div className="double-checkbox">
+                <label className="custom-checkbox" onClick={cashClick}>
                 <input type="radio" name="payment method"></input>
+                <span className="checkmark"></span>
+                </label>
                 <label>Cash on Delivery</label>
+                </div>
+                </div>
+                <div className="double-input">
+                {eMoney && 
+                <>
+                <div className="input-container">
                 <label for="e-money number">e-Money Number</label>
                 <input type="text" name="e-money number" placeholder="238521993"></input>
+                </div>
+                <div className="input-container">
                 <label for="e-money pin">e-Money Pin</label>
                 <input type="text" name="e-money pin" placeholder="6891"></input>
+                </div>
+                </>
+                }
+                {!eMoney && 
+                <div className="cash-delivery-exclaimer">
+                <img src={cash} alt="package delivery" className="cash-image" />
+                <p className="cash-explaination">The ‘Cash on Delivery’ option enables you to pay in cash when our delivery courier arrives 
+                at your residence. Just make sure your address is correct so that your order will not be cancelled.</p>
+                </div>
+                }
+                </div>
                 </form>
                 </div>
             </div>
@@ -85,4 +136,4 @@ function checkout() {
     )
 }
 
-export default checkout;
+export default Checkout;
