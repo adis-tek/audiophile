@@ -2,7 +2,7 @@
   font-family: "Manrope", sans-serif;
   margin: 0px;
   padding: 0px;
-  /* border: 1px solid red; */
+  border: 1px solid red;
 }
 
 html,
@@ -35,6 +35,12 @@ p {
   font-size: 15px;
   line-height: 25px;
   font-weight: 400;
+}
+
+a {
+  text-decoration: none;
+  text-transform: none;
+  list-style: none;
 }
 
 .overline {

@@ -11,12 +11,14 @@ import XX59 from './pages/xx59-headphones/xx59.jsx';
 import ZX9 from './pages/zx9-speaker/zx9.jsx';
 import ZX7 from './pages/zx7-speaker/zx7.jsx';
 import YX1 from './pages/yx1-earphones/yx1.jsx';
-import Checkout from './pages/checkout/checkout.jsx'
+import Checkout from './pages/checkout/checkout.jsx';
+import Nav from './components/nav/nav.jsx';
 
 function App() {
   return (
     <div className="App">
     <Router>
+    <Nav />
       <Switch>
       <Route exact path="/" component={Home} />
       <Route exact path="/headphones" component={Headphones} />

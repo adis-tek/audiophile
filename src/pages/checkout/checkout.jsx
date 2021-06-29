@@ -15,6 +15,11 @@ function Checkout() {
         setEMoney(false);
         setCashOnDelivery(true);
     }
+
+    {/* Form Validation */}
+
+    
+
     return (
     <>
     <div className="checkout-container">
@@ -122,12 +127,29 @@ function Checkout() {
                 </div>
             </div>
 
-            
-            <div className="summary-container">
-                <h3 className="summary">SUMMARY</h3>
+             <div className="summary-container">
+            <div className="summary">
+                <div className="summary-inner-container">
+                <h3 className="summary-header">SUMMARY</h3>
+                <div className="total-container">
+                <p className="total">TOTAL</p>
+                <p className="total-variable">500</p>
+                </div>
+                <div className="total-container">
+                <p className="total">SHIPPING</p>
+                <p className="total-variable">500</p>
+                </div>
+                <br></br>
+                <div className="total-container">
+                <p className="total">GRAND TOTAL</p>
+                <p className="final-total-variable">500</p>
+                </div>
+                <br></br>
                 <button className="pay-button">
                     <p className="subtitle">CONTINUE & PAY</p>
                 </button>
+            </div>
+            </div>
             </div>
         </div>
         </body>
