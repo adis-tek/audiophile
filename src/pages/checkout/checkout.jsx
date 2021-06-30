@@ -2,24 +2,94 @@ import React, {useState} from 'react';
 import './checkout.scss';
 import cash from '../../assets/checkout/cashOnDelivery.svg';
 
-function Checkout() {
-    const [eMoney, setEMoney] = useState(true);
-    const [cashOnDelivery, setCashOnDelivery] = useState(false);
+const validEmailRegex = 
+  RegExp(/^(([^<>()\[\]\.,;:\s@\"]+(\.[^<>()\[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i);
 
-    function eMoneyClick() {
-        setEMoney(true);
-        setCashOnDelivery(false);
+const validateForm = (errors) => {
+    let valid = true;
+    Object.values(errors).forEach(
+        (val) => val.length > 0 && (valid = false)
+    );
+    return valid;
+}
+
+class Checkout extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            fullName: null,
+            email: null,
+            phone: null,
+            address: null,
+            zipCode: null,
+            city: null,
+            country: null,
+            eMoneyNumber: null,
+            eMoneyPin: null,
+            errors: {
+                fullName: "",
+                email: "",
+                phone: "",
+            }
+        };
+    }
+    
+    handleChange = (event) => {
+        event.preventDefault();
+        const { name, value } = event.target;
+        let errors = this.state.errors;
+
+        switch (name) {
+            case "fullName":
+                errors.fullName = 
+                    value.length < 5
+                    ? "Name must be longer than 5 characters"
+                    : "";
+                    break;
+                case "email":
+                    errors.email =
+                        validEmailRegex.test(value)
+                        ? ""
+                        : "Email is not valid";
+                        break;
+                        case "phone": 
+                            errors.phone = 
+                            value.length < 7
+                            ? "Phone number must contain 7 digits"
+                            : "";
+                            break;
+                            default:
+                                break;
+        }
+
+        this.setState({errors, [name]: value}, ()=> {
+            console.log(errors)
+        })
     }
 
-    function cashClick() {
-        setEMoney(false);
-        setCashOnDelivery(true);
+    handleSubmit(event) {
+        alert('A name was submitted: ' + this.state.value);
     }
 
-    {/* Form Validation */}
+
+    handleSubmit = event => {
+        event.preventDefault();
+        console.log(this.state);
+    }
+
+    eMoneyClick = () => {
+        this.eMoney = true;
+        this.cashOnDelivery = false;
+    }
+
+    cashClick = () => {
+        this.eMoney = false;
+        this.cashOnDelivery = true;
+    }
 
     
-
+    render() {
+    const {errors} = this.state;
     return (
     <>
     <div className="checkout-container">
@@ -41,17 +111,20 @@ function Checkout() {
                 <div className="double-input">
                 <div className="input-container">
                 <label for="name">Name</label>
-                <input type="name" name="name" placeholder="Alexei Ward" required></input>
+                <input type="name" name="name" name={this.state.value} onChange={this.handleChange} placeholder="Alexei Ward" noValidate></input>
+                {this.state.errors.fullName && 
+                <span className='error'>{errors.fullName}</span>
+                }
                 </div>
                 <div className="input-container">
                 <label for="email">Email Address</label>
-                <input type="email" name="email" placeholder="alexei@mail.com" required></input>
+                <input type="email" name="email" email={this.state.value} onChange={this.handleChange} placeholder="alexei@mail.com" required></input>
                 </div>
                 </div>
                 <div className="double-input">
                 <div className="input-container">
                 <label for="phone number">Phone Number</label>
-                <input type="tel" name="phone number" placeholder="+1 202-555-0136" required></input>
+                <input type="tel" name="phone number" phone={this.state.value} onChange={this.handleChange} placeholder="+1 202-555-0136" required></input>
                 </div>
                 </div>
                 </form>
@@ -61,18 +134,18 @@ function Checkout() {
                 <div className="single-input">
                 <div className="input-container">
                 <label for="address">Address</label>
-                <input type="text" name="address" placeholder="1137 Williams Avenue" required></input>
+                <input type="text" name="address" autocomplete="home street-address" value={this.state.value} onChange={this.handleChange} placeholder="1137 Williams Avenue" required></input>
                 </div>
                 </div>
 
                 <div className="double-input">
                 <div className="input-container">
                 <label for="zip">Zip Code</label>
-                <input name="zip" type="text" pattern="[0-9]*" placeholder="10001" required></input>
+                <input name="zip" type="text" pattern="[0-9]*" autocomplete="home postal-code" value={this.state.value} onChange={this.handleChange} placeholder="10001" required></input>
                 </div>
                 <div className="input-container">
                 <label for="city">City</label>
-                <input type="text" name="city" placeholder="New York" required></input>
+                <input type="text" name="city" autocomplete="home locality" value={this.state.value} onChange={this.handleChange} placeholder="New York" required></input>
                 </div>
                 </div>
 
@@ -88,14 +161,14 @@ function Checkout() {
                 <label for="payment" className="payment">Payment Method</label>
                 <div className="radio-container">
                 <div className="double-checkbox">
-                <label className="custom-checkbox" onClick={eMoneyClick}>
+                <label className="custom-checkbox" onClick={this.eMoneyClick}>
                 <input type="radio" name="payment method"></input>
                 <span className="checkmark"></span>
                 </label>
                 <label>e-Money</label>
                 </div>
                 <div className="double-checkbox">
-                <label className="custom-checkbox" onClick={cashClick}>
+                <label className="custom-checkbox" onClick={this.cashClick}>
                 <input type="radio" name="payment method"></input>
                 <span className="checkmark"></span>
                 </label>
@@ -103,19 +176,19 @@ function Checkout() {
                 </div>
                 </div>
                 <div className="double-input">
-                {eMoney && 
+                {this.eMoney && 
                 <>
                 <div className="input-container">
                 <label for="e-money number">e-Money Number</label>
-                <input type="text" name="e-money number" placeholder="238521993"></input>
+                <input type="text" name="e-money number" value={this.state.value} onChange={this.handleChange} placeholder="238521993"></input>
                 </div>
                 <div className="input-container">
                 <label for="e-money pin">e-Money Pin</label>
-                <input type="text" name="e-money pin" placeholder="6891"></input>
+                <input type="text" name="e-money pin" value={this.state.value} onChange={this.handleChange} placeholder="6891"></input>
                 </div>
                 </>
                 }
-                {!eMoney && 
+                {!this.eMoney && 
                 <div className="cash-delivery-exclaimer">
                 <img src={cash} alt="package delivery" className="cash-image" />
                 <p className="cash-explaination">The ‘Cash on Delivery’ option enables you to pay in cash when our delivery courier arrives 
@@ -146,7 +219,7 @@ function Checkout() {
                 </div>
                 <br></br>
                 <button className="pay-button">
-                    <p className="subtitle">CONTINUE & PAY</p>
+                    <p className="subtitle" onClick={this.handleSubmit}>CONTINUE & PAY</p>
                 </button>
             </div>
             </div>
@@ -156,6 +229,7 @@ function Checkout() {
     </div>
     </>
     )
+}
 }
 
 export default Checkout;
