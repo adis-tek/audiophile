@@ -13,6 +13,7 @@ import ZX7 from './pages/zx7-speaker/zx7.jsx';
 import YX1 from './pages/yx1-earphones/yx1.jsx';
 import Checkout from './pages/checkout/checkout.jsx';
 import Nav from './components/nav/nav.jsx';
+import Footer from './components/footer/footer.jsx';
 
 function App() {
   return (
@@ -32,6 +33,7 @@ function App() {
         <Route exact path="/earphones/yx1" component={YX1} />
       <Route exact path="/checkout" component={Checkout} />
       </Switch>
+    <Footer />
     </Router>
     </div>
   );

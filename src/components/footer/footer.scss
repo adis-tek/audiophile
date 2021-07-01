@@ -1,0 +1,68 @@
+@use '../../styles';
+
+.footer-container {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 365px;
+  z-index: auto;
+  overflow: hidden;
+  background-color: styles.$very-dark-grey;
+  .footer {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 80vw;
+    height: 100%;
+    max-width: 1092px;
+    z-index: 0;
+    @media screen and (max-width: styles.$screen-md-max) {
+      width: 90vw;
+    }
+    @media screen and (max-width: styles.$screen-sm-max) {
+      width: 100vw;
+    }
+    .orange-line {
+      position: absolute;
+      display: block;
+      width: 101px;
+      height: 4px;
+      background-color: styles.$orange;
+      top: 0;
+    }
+    .center-footer-container {
+      position: relative;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+      width: 100%;
+      height: 70%;
+      .left-footer {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: space-around;
+        width: 50%;
+        height: 100%;
+      }
+      .right-footer {
+        position: absolute;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        justify-content: space-between;
+        width: 50%;
+        height: 50%;
+        top: 0;
+        right: 0;
+      }
+    }
+  }
+}

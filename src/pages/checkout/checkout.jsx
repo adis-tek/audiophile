@@ -33,10 +33,17 @@ class Checkout extends React.Component {
             country: null,
             eMoneyNumber: null,
             eMoneyPin: null,
+            eMoney: true,
             errors: {
                 fullName: "",
                 email: "",
                 phone: "",
+                address: "",
+                zip: "",
+                city: "",
+                country: "",
+                eMoneyNumber: "",
+                eMoneyPin: "",
             }
         };
     }
@@ -79,7 +86,7 @@ class Checkout extends React.Component {
                 case "address":
                 errors.address =
                         value.trim().length < 5
-                        ? "" : "Wrong format";
+                        ? "Wrong format" : "";
                         break;
                 case "zip":
                 errors.zip = 
@@ -89,19 +96,41 @@ class Checkout extends React.Component {
                 case "city":
                 errors.city =
                         value.trim().length < 3
-                        ? "" : "Wrong format";
+                        ? "Wrong format" : "";
                         break;
                 case "country":
                 errors.country =
                     value.trim().length < 3
-                    ? "" : "Wrong format";
+                    ? "Wrong format" : "";
                     break;
+                case "eMoneyNumber":
+                    errors.eMoneyNumber =
+                        value.trim().length < 9
+                        ? "Wrong format" : "";
+                        break;
+                case "eMoneyPin":
+                    errors.eMoneyPin =
+                        value.trim().length < 4
+                        ? "Wrong format" : "";
+                        break;
                     default:
                     break;
         }
 
         this.setState({ errors, [name]: value }, () => console.log(this.state));
     };
+
+    eMoneyChange = () => {
+        this.setState({
+            eMoney: true
+        })
+    }
+
+    cashChange = () => {
+        this.setState({
+            eMoney: false
+        })
+    }
     
     render() {
     const { errors } = this.state;
@@ -163,8 +192,8 @@ class Checkout extends React.Component {
                 <div className="input-container">
                 <div className="label-container">
                 <label for="address">Address</label>
-                {errors.phone && (
-                <span className='error'>{errors.phone}</span>
+                {errors.address && (
+                <span className='error'>{errors.address}</span>
                 )}
                 </div>
                 <input type="text" name="address" autocomplete="home street-address" address={this.state.value} onChange={this.handleChange} placeholder="1137 Williams Avenue" required></input>
@@ -176,8 +205,8 @@ class Checkout extends React.Component {
                 <div className="input-container">
                 <div className="label-container">
                 <label for="zip">Zip Code</label>
-                {errors.phone && (
-                <span className='error'>{errors.phone}</span>
+                {errors.zip && (
+                <span className='error'>{errors.zip}</span>
                 )}
                 </div>
                 <input name="zip" type="text" pattern="[0-9]*" autocomplete="home postal-code" zip={this.state.value} onChange={this.handleChange} placeholder="10001" required></input>
@@ -185,8 +214,8 @@ class Checkout extends React.Component {
                 <div className="input-container">
                 <div className="label-container">
                 <label for="city">City</label>
-                {errors.phone && (
-                <span className='error'>{errors.phone}</span>
+                {errors.city && (
+                <span className='error'>{errors.city}</span>
                 )}
                 </div>
                 <input type="text" name="city" autocomplete="home locality" city={this.state.value} onChange={this.handleChange} placeholder="New York" required></input>
@@ -197,8 +226,8 @@ class Checkout extends React.Component {
                 <div className="input-container">
                 <div className="label-container">
                 <label for="country">Country</label>
-                {errors.phone && (
-                <span className='error'>{errors.phone}</span>
+                {errors.country && (
+                <span className='error'>{errors.country}</span>
                 )}
                 </div>
                 <input type="text" name="country" country={this.state.value} onChange={this.handleChange} placeholder="United States" required></input>
@@ -210,14 +239,14 @@ class Checkout extends React.Component {
                 <label for="payment" className="payment">Payment Method</label>
                 <div className="radio-container">
                 <div className="double-checkbox">
-                <label className="custom-checkbox" onClick={this.eMoneyClick}>
+                <label className="custom-checkbox" onClick={this.eMoneyChange}>
                 <input type="radio" name="payment method"></input>
                 <span className="checkmark"></span>
                 </label>
                 <label>e-Money</label>
                 </div>
                 <div className="double-checkbox">
-                <label className="custom-checkbox" onClick={this.cashClick}>
+                <label className="custom-checkbox" onClick={this.cashChange}>
                 <input type="radio" name="payment method"></input>
                 <span className="checkmark"></span>
                 </label>
@@ -225,13 +254,13 @@ class Checkout extends React.Component {
                 </div>
                 </div>
                 <div className="double-input">
-                {this.eMoney && 
+                {this.state.eMoney && 
                 <>
                 <div className="input-container">
                 <div className="label-container">
                 <label for="e-money number">e-Money Number</label>
-                {errors.phone && (
-                <span className='error'>{errors.phone}</span>
+                {errors.eMoneyNumber && (
+                <span className='error'>{errors.eMoneyNumber}</span>
                 )}
                 </div>
                 <input type="text" name="eMoneyNumber" eMoneyNumber={this.state.value} onChange={this.handleChange} placeholder="238521993"></input>
@@ -239,15 +268,15 @@ class Checkout extends React.Component {
                 <div className="input-container">
                 <div className="label-container">
                 <label for="e-money pin">e-Money Pin</label>
-                {errors.phone && (
-                <span className='error'>{errors.phone}</span>
+                {errors.eMoneyPin && (
+                <span className='error'>{errors.eMoneyPin}</span>
                 )}
                 </div>
                 <input type="text" name="eMoneyPin" eMoneyPin={this.state.value} onChange={this.handleChange} placeholder="6891"></input>
                 </div>
                 </>
                 }
-                {!this.eMoney && 
+                {!this.state.eMoney && 
                 <div className="cash-delivery-exclaimer">
                 <img src={cash} alt="package delivery" className="cash-image" />
                 <p className="cash-explaination">The ‘Cash on Delivery’ option enables you to pay in cash when our delivery courier arrives 
