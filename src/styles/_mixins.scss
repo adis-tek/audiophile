@@ -431,6 +431,41 @@
         padding: 0;
         width: 100%;
       }
+      .label-container {
+        position: relative;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+        height: 30px;
+        label {
+          position: relative;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          font-size: 12px;
+          font-weight: 700;
+          color: black;
+          margin: 0px 0px 0px 0px;
+          padding: 0;
+          width: auto;
+          height: 100%;
+          text-align: center;
+        }
+        .error {
+          position: relative;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          font-size: 12px;
+          font-weight: 500;
+          color: #cd2c2c;
+          width: auto;
+          height: 100%;
+          text-align: center;
+        }
+      }
     }
   }
 }

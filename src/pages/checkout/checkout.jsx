@@ -1,21 +1,28 @@
-import React, {useState} from 'react';
+import React, { Component } from 'react';
 import './checkout.scss';
 import cash from '../../assets/checkout/cashOnDelivery.svg';
 
-const validEmailRegex = 
+const emailRegex = 
   RegExp(/^(([^<>()\[\]\.,;:\s@\"]+(\.[^<>()\[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i);
 
-const validateForm = (errors) => {
+const formValid = ({ errors, ...rest }) => {
     let valid = true;
-    Object.values(errors).forEach(
-        (val) => val.length > 0 && (valid = false)
-    );
+
+    Object.values(errors).forEach(val => {
+        val.length > 0 && (valid = false);
+    });
+
+    Object.values(rest).forEach(val => {
+        val === null && (valid = false);
+    });
+
     return valid;
-}
+};
 
 class Checkout extends React.Component {
     constructor(props) {
         super(props);
+
         this.state = {
             fullName: null,
             email: null,
@@ -33,63 +40,72 @@ class Checkout extends React.Component {
             }
         };
     }
-    
-    handleChange = (event) => {
-        event.preventDefault();
-        const { name, value } = event.target;
-        let errors = this.state.errors;
-
-        switch (name) {
-            case "fullName":
-                errors.fullName = 
-                    value.length < 5
-                    ? "Name must be longer than 5 characters"
-                    : "";
-                    break;
-                case "email":
-                    errors.email =
-                        validEmailRegex.test(value)
-                        ? ""
-                        : "Email is not valid";
-                        break;
-                        case "phone": 
-                            errors.phone = 
-                            value.length < 7
-                            ? "Phone number must contain 7 digits"
-                            : "";
-                            break;
-                            default:
-                                break;
-        }
-
-        this.setState({errors, [name]: value}, ()=> {
-            console.log(errors)
-        })
-    }
-
-    handleSubmit(event) {
-        alert('A name was submitted: ' + this.state.value);
-    }
-
 
     handleSubmit = event => {
         event.preventDefault();
-        console.log(this.state);
-    }
 
-    eMoneyClick = () => {
-        this.eMoney = true;
-        this.cashOnDelivery = false;
-    }
+        if (formValid(this.state.errors)) {
+            console.log(`
+            --SUBMITTING--
+            Full Name: ${this.state.fullName}
+            Email: ${this.state.email}
+            `);
+        } else {
+            console.log("FORM INVALID - ERROR")
+        }
+    };
+    
+    handleChange = event => {
+        event.preventDefault();
+        const { name, value } = event.target;
+        let errors = {...this.state.errors};
 
-    cashClick = () => {
-        this.eMoney = false;
-        this.cashOnDelivery = true;
-    }
+        switch (name) {
+                case "fullName":
+                errors.fullName = 
+                    value.trim().length < 5
+                    ? "Wrong format" : "";
+                    break;
+                case "email":
+                errors.email =
+                    emailRegex.test(value)
+                    ? "" : "Wrong format";
+                    break;
+                case "phone":
+                errors.phone = 
+                        value.trim().length < 7
+                        ? "Wrong format" : "";
+                        break;
+                case "address":
+                errors.address =
+                        value.trim().length < 5
+                        ? "" : "Wrong format";
+                        break;
+                case "zip":
+                errors.zip = 
+                        value.trim().length < 4
+                        ? "Wrong format" : "";
+                        break;
+                case "city":
+                errors.city =
+                        value.trim().length < 3
+                        ? "" : "Wrong format";
+                        break;
+                case "country":
+                errors.country =
+                    value.trim().length < 3
+                    ? "" : "Wrong format";
+                    break;
+                    default:
+                    break;
+        }
 
+        this.setState({ errors, [name]: value }, () => console.log(this.state));
+    };
     
     render() {
-    const {errors} = this.state;
+    const { errors } = this.state;
+
     return (
     <>
     <div className="checkout-container">
@@ -110,21 +126,33 @@ class Checkout extends React.Component {
                 <form className="billing-details-form">
                 <div className="double-input">
                 <div className="input-container">
+                <div className="label-container">
                 <label for="name">Name</label>
-                <input type="name" name="name" name={this.state.value} onChange={this.handleChange} placeholder="Alexei Ward" noValidate></input>
-                {this.state.errors.fullName && 
+                {errors.fullName && (
                 <span className='error'>{errors.fullName}</span>
-                }
+                )}
+                </div>
+                <input type="name" name="fullName" fullName={this.state.value} onChange={this.handleChange} placeholder="Alexei Ward" noValidate></input>
                 </div>
                 <div className="input-container">
+                <div className="label-container">
                 <label for="email">Email Address</label>
+                {errors.email && (
+                <span className='error'>{errors.email}</span>
+                )}
+                </div>
                 <input type="email" name="email" email={this.state.value} onChange={this.handleChange} placeholder="alexei@mail.com" required></input>
                 </div>
                 </div>
                 <div className="double-input">
                 <div className="input-container">
+                <div className="label-container">
                 <label for="phone number">Phone Number</label>
-                <input type="tel" name="phone number" phone={this.state.value} onChange={this.handleChange} placeholder="+1 202-555-0136" required></input>
+                {errors.phone && (
+                <span className='error'>{errors.phone}</span>
+                )}
+                </div>
+                <input type="tel" name="phone" phone={this.state.value} onChange={this.handleChange} placeholder="+1 202-555-0136" required></input>
                 </div>
                 </div>
                 </form>
@@ -133,26 +161,47 @@ class Checkout extends React.Component {
                 <form className="address-form">
                 <div className="single-input">
                 <div className="input-container">
+                <div className="label-container">
                 <label for="address">Address</label>
-                <input type="text" name="address" autocomplete="home street-address" value={this.state.value} onChange={this.handleChange} placeholder="1137 Williams Avenue" required></input>
+                {errors.phone && (
+                <span className='error'>{errors.phone}</span>
+                )}
+                </div>
+                <input type="text" name="address" autocomplete="home street-address" address={this.state.value} onChange={this.handleChange} placeholder="1137 Williams Avenue" required></input>
+                
                 </div>
                 </div>
 
                 <div className="double-input">
                 <div className="input-container">
+                <div className="label-container">
                 <label for="zip">Zip Code</label>
-                <input name="zip" type="text" pattern="[0-9]*" autocomplete="home postal-code" value={this.state.value} onChange={this.handleChange} placeholder="10001" required></input>
+                {errors.phone && (
+                <span className='error'>{errors.phone}</span>
+                )}
+                </div>
+                <input name="zip" type="text" pattern="[0-9]*" autocomplete="home postal-code" zip={this.state.value} onChange={this.handleChange} placeholder="10001" required></input>
                 </div>
                 <div className="input-container">
+                <div className="label-container">
                 <label for="city">City</label>
-                <input type="text" name="city" autocomplete="home locality" value={this.state.value} onChange={this.handleChange} placeholder="New York" required></input>
+                {errors.phone && (
+                <span className='error'>{errors.phone}</span>
+                )}
+                </div>
+                <input type="text" name="city" autocomplete="home locality" city={this.state.value} onChange={this.handleChange} placeholder="New York" required></input>
                 </div>
                 </div>
 
                 <div className="double-input">
                 <div className="input-container">
+                <div className="label-container">
                 <label for="country">Country</label>
-                <input type="text" name="country" placeholder="United States" required></input>
+                {errors.phone && (
+                <span className='error'>{errors.phone}</span>
+                )}
+                </div>
+                <input type="text" name="country" country={this.state.value} onChange={this.handleChange} placeholder="United States" required></input>
                 </div>
                 </div>
                 </form>
@@ -179,12 +228,22 @@ class Checkout extends React.Component {
                 {this.eMoney && 
                 <>
                 <div className="input-container">
+                <div className="label-container">
                 <label for="e-money number">e-Money Number</label>
-                <input type="text" name="e-money number" value={this.state.value} onChange={this.handleChange} placeholder="238521993"></input>
+                {errors.phone && (
+                <span className='error'>{errors.phone}</span>
+                )}
+                </div>
+                <input type="text" name="eMoneyNumber" eMoneyNumber={this.state.value} onChange={this.handleChange} placeholder="238521993"></input>
                 </div>
                 <div className="input-container">
+                <div className="label-container">
                 <label for="e-money pin">e-Money Pin</label>
-                <input type="text" name="e-money pin" value={this.state.value} onChange={this.handleChange} placeholder="6891"></input>
+                {errors.phone && (
+                <span className='error'>{errors.phone}</span>
+                )}
+                </div>
+                <input type="text" name="eMoneyPin" eMoneyPin={this.state.value} onChange={this.handleChange} placeholder="6891"></input>
                 </div>
                 </>
                 }
@@ -228,7 +287,7 @@ class Checkout extends React.Component {
         </body>
     </div>
     </>
-    )
+    );
 }
 }
 
