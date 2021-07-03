@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './checkout.scss';
 import cash from '../../assets/checkout/cashOnDelivery.svg';
+import MarkII from '../../assets/product-xx99-mark-two-headphones/desktop/image-product.jpg';
 
 const emailRegex = 
   RegExp(/^(([^<>()\[\]\.,;:\s@\"]+(\.[^<>()\[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i);
@@ -292,6 +293,18 @@ class Checkout extends React.Component {
             <div className="summary">
                 <div className="summary-inner-container">
                 <h3 className="summary-header">SUMMARY</h3>
+                <div className="product-container">
+                    <img src={MarkII} alt="product image" className="product-image" />
+                    <div className="title-container">
+                    <h4 className="product-title">Product Title</h4>
+                    <h5 className="product-price">$2,999</h5>
+                    </div>
+                    <div className="counter">
+                        <p className="minus">-</p>
+                        <p className="quantity">1</p>
+                        <p className="plus">+</p>
+                    </div>
+                </div>
                 <div className="total-container">
                 <p className="total">TOTAL</p>
                 <p className="total-variable">500</p>

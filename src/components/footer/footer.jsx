@@ -28,12 +28,25 @@ function footer() {
                     </div>
                     <div className="right-footer">
                         <div className="links-container">
-
+                        <ul>
+                            <NavLink exact activeClassName="active" to="/">
+                            <li>HOME</li>
+                            </NavLink>
+                            <NavLink exact activeClassName="active" to="/headphones">
+                            <li>HEADPHONES</li>
+                            </NavLink>
+                            <NavLink exact activeClassName="active" to="/speakers">
+                            <li>SPEAKERS</li>
+                            </NavLink>
+                            <NavLink exact activeClassName="active" to="/earphones">
+                            <li>EARPHONES</li>
+                            </NavLink>
+                        </ul>
                         </div>
                         <div className="social-media-container">
-                        <img src={FaceBook} alt="facebook logo" className="facebook" />
-                        <img src={Twitter} alt="twitter logo" className="twitter" />
-                        <img src={Instagram} alt="instagram logo" className="instagram" />
+                        <img src={FaceBook} alt="facebook logo" className="social" />
+                        <img src={Twitter} alt="twitter logo" className="social" />
+                        <img src={Instagram} alt="instagram logo" className="social" />
                         </div>
                     </div>
                 </div>

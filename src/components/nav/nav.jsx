@@ -1,10 +1,16 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { NavLink } from 'react-router-dom';
 import './nav.scss';
 import Logo from '../../assets/shared/desktop/logo.svg';
 import Cart from '../../assets/shared/desktop/icon-cart.svg';
+import MarkII from '../../assets/product-xx99-mark-two-headphones/desktop/image-product.jpg';
 
-function nav() {
+function Nav() {
+    const [cartWindow, setCartWindow] = useState(false);
+
+    function cart() {
+        setCartWindow(!cartWindow);
+    }
     return (
     <>
         <div className="nav-container">
@@ -33,11 +39,43 @@ function nav() {
                             </NavLink>
                         </ul>
                     </div>
-                    <img src={Cart} alt="cart" className="cart" />
+                    <img src={Cart} alt="cart" className="cart" onClick={cart} />
                 </div>
         </div>
+        {cartWindow && (
+            <>
+            <div className="backdrop"></div>
+            <div className="cart-window-container">
+                <div className="cart-window">
+                <div className="header-container">
+                <h3 className="cart-header">CART (1)</h3>
+                <p className="remove-all">Remove all</p>
+                </div>
+                <div className="product-container">
+                    <img src={MarkII} alt="product image" className="product-image" />
+                    <div className="title-container">
+                    <h4 className="product-title">Product Title</h4>
+                    <h5 className="product-price">$2,999</h5>
+                    </div>
+                    <div className="counter">
+                        <p className="minus">-</p>
+                        <p className="quantity">1</p>
+                        <p className="plus">+</p>
+                    </div>
+                </div>
+                <div className="total-container">
+                    <p className="total">TOTAL</p>
+                    <p className="total-price">$2,999</p>
+                </div>
+                <button className="checkout-button">
+                    <p className="checkout">CHECKOUT</p>
+                </button>
+                </div>
+            </div>
+            </>
+        )}
     </>
     )
 }
 
-export default nav;
+export default Nav;
