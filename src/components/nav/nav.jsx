@@ -8,6 +8,7 @@ import MarkII from '../../assets/product-xx99-mark-two-headphones/desktop/image-
 function Nav() {
     const [cartWindow, setCartWindow] = useState(false);
 
+    {/* Toggle Function */}
     function cart() {
         setCartWindow(!cartWindow);
     }
@@ -42,7 +43,7 @@ function Nav() {
                     <img src={Cart} alt="cart" className="cart" onClick={cart} />
                 </div>
         </div>
-        {cartWindow && (
+        {cartWindow && ( 
             <>
             <div className="backdrop"></div>
             <div className="cart-window-container">
