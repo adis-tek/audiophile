@@ -13,6 +13,7 @@ import Suggestion3 from '../../assets//shared/desktop/image-zx9-speaker.jpg';
 
 
 function x99MarkTwo() {
+    
     return (
 <>
 <div className="headphones-container">
