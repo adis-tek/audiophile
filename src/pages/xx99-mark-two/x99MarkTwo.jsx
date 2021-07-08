@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import './x99-mark-two.scss';
 import ProductTrio from '../../components/product-trio/productTrio';
 import BestGear from '../../components/best-gear/bestGear';
@@ -12,8 +12,42 @@ import Suggestion3 from '../../assets//shared/desktop/image-zx9-speaker.jpg';
 
 
 
-function x99MarkTwo() {
-    
+function X99MarkTwo() {
+    const [quantity, setQuantity] = useState(1);
+    const [cart, setCart] = useState(JSON.parse(localStorage.getItem('cart')) || []);
+    const markII = {
+        category: 'HEADPHONES',
+        name: 'Mark II',
+        cost: 2999.99,
+        quantity: {quantity},
+        image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQ5-QAul_NfAs-s0XW9M087xWyPOGWvbfYjmqSl0QXabZRSYoid47i7kISiAteyIh0YOci5mtQ&usqp=CAc',
+    };
+
+    const minusQuantity = () => {
+        if (quantity === 1) {
+            setQuantity(1);
+        } else {
+            setQuantity(quantity - 1)
+        }
+    }
+
+    const plusQuantity = () => {
+        if (quantity === 9) {
+            setQuantity(9);
+        } else {
+            setQuantity(quantity + 1)
+        }
+    }
+
+    useEffect(() => {
+        localStorage.setItem("cart", JSON.stringify(cart));
+    }, [cart]);
+
+    const addMarkII = () => {
+        setCart([...cart, markII]);
+        window.location.reload();
+    }
+
     return (
 <>
 <div className="headphones-container">
@@ -39,11 +73,11 @@ function x99MarkTwo() {
                         <h4 className="price">$2,999</h4>
                         <div className="button-container">
                             <button className="quantity-button-container">
-                                <h4 className="minus">-</h4>
-                                <h4 className="quantity">1</h4>
-                                <h4 className="plus">+</h4>
+                                <h4 className="minus" onClick={minusQuantity}>-</h4>
+                                <h4 className="quantity">{quantity}</h4>
+                                <h4 className="plus" onClick={plusQuantity}>+</h4>
                             </button>
-                        <button className="banner-button">
+                        <button className="banner-button" onClick={addMarkII}>
                             <p className="subtitle">ADD TO CART</p>
                         </button>
                         </div>
@@ -132,4 +166,4 @@ function x99MarkTwo() {
     )
 }
 
-export default x99MarkTwo;
+export default X99MarkTwo;
