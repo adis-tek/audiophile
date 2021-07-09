@@ -11,7 +11,6 @@ import Suggestion2 from '../../assets//shared/desktop/image-xx59-headphones.jpg'
 import Suggestion3 from '../../assets//shared/desktop/image-zx9-speaker.jpg';
 
 
-
 function X99MarkTwo() {
     const [quantity, setQuantity] = useState(1);
     const [cart, setCart] = useState(JSON.parse(localStorage.getItem('cart')) || []);
@@ -159,6 +158,9 @@ function X99MarkTwo() {
                 </div>
             </div>
             <ProductTrio />
+            <div>
+                {/* Adjust counter */}
+            </div>
             <BestGear />
         </body>
     </div>
