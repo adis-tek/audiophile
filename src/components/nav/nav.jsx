@@ -9,6 +9,7 @@ import ZX9 from '../../assets/category-speakers/desktop/image-zx9.jpg';
 function Nav() {
     const [cartWindow, setCartWindow] = useState(false);
     const [cart, setCart] = useState(JSON.parse(localStorage.getItem('cart')) || []);
+    const [openCart, setOpenCart] = useState(JSON.parse(localStorage.getItem('openCart')) || false);
     const [products] = useState([
         {
         category: 'HEADPHONES',
@@ -18,26 +19,72 @@ function Nav() {
         image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQ5-QAul_NfAs-s0XW9M087xWyPOGWvbfYjmqSl0QXabZRSYoid47i7kISiAteyIh0YOci5mtQ&usqp=CAc',
     }
 ]);
+    // const [oldQuantity, setOldQuantity] = useState('');
+    // const [quantity, setQuantity] = useState('');
+    // const [quantityChecked, setQuantityChecked] = useState(true);
+    const [id, setId] = useState('');
+    const [refresh, setRefresh] = useState('');
+    const [cartQuantity, setCartQuantity] = useState(0);
+
+
+    if (openCart !== false) {
+    setTimeout(() => {
+        setCartWindow(true);
+        console.log('Cart Opens');
+    }, 500);
+} else {
+    console.log('');
+}
+
+    const quantityPlus = (event) => {
+        const myCart = JSON.parse(localStorage.cart);
+
+        for (var i = 0; i < myCart.length; i++) {
+            if (id === myCart[i].id) {
+                myCart[i].quantity.quantity++;
+                localStorage.setItem('cart', JSON.stringify(myCart));
+                setOpenCart(true);
+                setRefresh(true);
+                break;
+            } else {
+                setOpenCart(false);
+                console.log("No Id match found");
+            }
+        }
+    }
+
+
+
 
     {/* Toggle Function */}
     function toggleCart() {
         setCartWindow(!cartWindow);
+        setOpenCart(!openCart);
     }
 
     function removeAll() {
         setCart([]);
+        setOpenCart(false);
         window.location.reload();
     }
 
-    const plusQuantity = (product) => {
-        setCart([...cart, product.quantity.quantity++]);
-        window.location.reload();
-
-    };
 
     useEffect(() => {
         localStorage.setItem("cart", JSON.stringify(cart));
     }, [cart]);
+
+    useEffect(() => {
+        localStorage.setItem("openCart", JSON.stringify(openCart));
+    }, [openCart]);
+
+    useEffect(() => {
+        if (refresh === true) {
+        setRefresh(false);
+        window.location.reload();
+        } else {
+            console.log('not refreshing');
+        }
+    }, [refresh]);
 
     return (
     <>
@@ -67,6 +114,11 @@ function Nav() {
                             </NavLink>
                         </ul>
                     </div>
+                    {cartQuantity > 0 && (
+                    <div>
+                        <p>{cartQuantity}</p>
+                    </div>
+                    )}
                     <img src={Cart} alt="cart" className="cart" onClick={toggleCart} />
                 </div>
         </div>
@@ -76,7 +128,7 @@ function Nav() {
             <div className="cart-window-container">
                 <div className="cart-window">
                 <div className="header-container">
-                <h3 className="cart-header">CART ({cart.length})</h3>
+                <h3 className="cart-header">CART ({cart?.length})</h3>
                 <p className="remove-all" onClick={removeAll}>Remove all</p>
                 </div>
                 {cart.map((product, index) => (
@@ -89,7 +141,7 @@ function Nav() {
                 <div className="counter">
                     <p className="minus">-</p>
                     <p className="quantity">{product.quantity.quantity}</p>
-                    <p className="plus" onClick={(product) => setCart([...cart, product.quantity.quantity++])}>+</p>
+                    <p className="plus" onClick={() => setId(product.id) || (quantityPlus())}>+</p>
                 </div>
             </div>
                 ))}

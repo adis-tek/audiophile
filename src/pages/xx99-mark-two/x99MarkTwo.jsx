@@ -14,7 +14,9 @@ import Suggestion3 from '../../assets//shared/desktop/image-zx9-speaker.jpg';
 function X99MarkTwo() {
     const [quantity, setQuantity] = useState(1);
     const [cart, setCart] = useState(JSON.parse(localStorage.getItem('cart')) || []);
+    const [openCart, setOpenCart] = useState(JSON.parse(localStorage.getItem('openCart')) || false);
     const markII = {
+        id: cart?.length + 1,
         category: 'HEADPHONES',
         name: 'Mark II',
         cost: 2999.99,
@@ -42,8 +44,13 @@ function X99MarkTwo() {
         localStorage.setItem("cart", JSON.stringify(cart));
     }, [cart]);
 
+    useEffect(() => {
+        localStorage.setItem("openCart", JSON.stringify(openCart));
+    }, [openCart]);
+
     const addMarkII = () => {
         setCart([...cart, markII]);
+        setOpenCart(true);
         window.location.reload();
     }
 
@@ -159,7 +166,6 @@ function X99MarkTwo() {
             </div>
             <ProductTrio />
             <div>
-                {/* Adjust counter */}
             </div>
             <BestGear />
         </body>
