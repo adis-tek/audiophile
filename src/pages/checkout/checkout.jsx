@@ -132,6 +132,10 @@ class Checkout extends React.Component {
             eMoney: false
         })
     }
+
+    toggleOrder = () => {
+        setOrder(true);
+    }
     
     render() {
     const { errors } = this.state;
@@ -291,7 +295,7 @@ class Checkout extends React.Component {
 
              <div className="summary-container">
             <div className="summary">
-                <Summary />
+                <Summary order={toggleOrder} />
                 <button className="pay-button">
                     <p className="subtitle" onClick={this.handleSubmit}>CONTINUE & PAY</p>
                 </button>

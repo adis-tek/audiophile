@@ -10,6 +10,7 @@ function Summary() {
     const [quantitySum, setQuantitySum] = useState('');
     const [shipping, setShipping] = useState('');
     const [totalSum, setTotalSum] = useState('');
+    const [order, setOrder] = useState(false);
 
     setTimeout(() => {
         total();
@@ -91,9 +92,16 @@ function Summary() {
     <div className="total-container">
     <p className="total">GRAND TOTAL</p>
     <p className="final-total-variable">${quantitySum + (shipping * 1.25)}</p>
-    <button onClick={() => total()}>CALC SUM</button>
     </div>
 </div>
+
+    {order && (
+    <div className="backdrop-order">
+    <div className="order-container">
+
+    </div>
+    </div>
+    )}
 </>
     )
 }
