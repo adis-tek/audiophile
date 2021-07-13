@@ -10,7 +10,7 @@ function Summary() {
     const [quantitySum, setQuantitySum] = useState('');
     const [shipping, setShipping] = useState('');
     const [totalSum, setTotalSum] = useState('');
-    const [order, setOrder] = useState(false);
+    const [order, setOrder] = useState(JSON.parse(localStorage.getItem('order')) || []);
 
     setTimeout(() => {
         total();
@@ -54,6 +54,10 @@ function Summary() {
     }, [cart]);
 
     useEffect(() => {
+        localStorage.setItem("order", JSON.stringify(order));
+    }, [order]);
+
+    useEffect(() => {
         if (refresh === true) {
         setRefresh(false);
         window.location.reload();
@@ -61,6 +65,8 @@ function Summary() {
             console.log('not refreshing');
         }
     }, [refresh]);
+
+
 
     return (
 <>
@@ -95,13 +101,13 @@ function Summary() {
     </div>
 </div>
 
-    {order && (
+    {/* {order && (
     <div className="backdrop-order">
     <div className="order-container">
 
     </div>
     </div>
-    )}
+    )} */}
 </>
     )
 }

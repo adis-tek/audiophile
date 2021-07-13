@@ -22,9 +22,15 @@ function Nav() {
     // const [oldQuantity, setOldQuantity] = useState('');
     // const [quantity, setQuantity] = useState('');
     // const [quantityChecked, setQuantityChecked] = useState(true);
-    const [id, setId] = useState('');
+    const [idPlus, setIdPlus] = useState('');
+    const [idMinus, setIdMinus] = useState('');
     const [refresh, setRefresh] = useState('');
     const [cartQuantity, setCartQuantity] = useState(0);
+    const [quantitySum, setQuantitySum] = useState('');
+
+    setTimeout(() => {
+        total();
+    }, 250)
 
 
     if (openCart !== false) {
@@ -36,11 +42,28 @@ function Nav() {
     console.log('');
 }
 
+    const quantityMinus = (event) => {
+        const myCart = JSON.parse(localStorage.cart);
+
+        for (var i = 0; i < myCart.length; i++) {
+            if (idMinus === myCart[i].id && myCart[i].quantity.quantity > 1) {
+                myCart[i].quantity.quantity--;
+                localStorage.setItem('cart', JSON.stringify(myCart));
+                setOpenCart(true);
+                setRefresh(true);
+                break;
+            } else {
+                setOpenCart(false);
+                console.log("No Id match found");
+            }
+        }
+    }
+
     const quantityPlus = (event) => {
         const myCart = JSON.parse(localStorage.cart);
 
         for (var i = 0; i < myCart.length; i++) {
-            if (id === myCart[i].id) {
+            if (idPlus === myCart[i].id) {
                 myCart[i].quantity.quantity++;
                 localStorage.setItem('cart', JSON.stringify(myCart));
                 setOpenCart(true);
@@ -51,6 +74,16 @@ function Nav() {
                 console.log("No Id match found");
             }
         }
+    }
+
+    const total = () => {
+        const myCart = JSON.parse(localStorage.cart);
+        let quantitySumCalc = [];
+
+        for (var i = 0; i < myCart.length; i++) {
+            quantitySumCalc.push(myCart[i].quantity.quantity * myCart[i].cost);
+        }
+        setQuantitySum(Number((quantitySumCalc.reduce((a, v) => a = a + v , 0)).toFixed(2)));
     }
 
 
@@ -85,6 +118,18 @@ function Nav() {
             console.log('not refreshing');
         }
     }, [refresh]);
+
+    useEffect(() => {
+        quantityPlus()
+        setIdPlus('');
+        setOpenCart(true);
+    }, [idPlus]);
+
+    useEffect(() => {
+        quantityMinus()
+        setIdMinus('');
+        setOpenCart(true);
+    }, [idMinus]);
 
     return (
     <>
@@ -139,15 +184,15 @@ function Nav() {
                 <h5 className="product-price">{product.cost}</h5>
                 </div>
                 <div className="counter">
-                    <p className="minus">-</p>
+                    <p className="minus" onClick={() => setIdMinus(product.id)}>-</p>
                     <p className="quantity">{product.quantity.quantity}</p>
-                    <p className="plus" onClick={() => setId(product.id) || (quantityPlus())}>+</p>
+                    <p className="plus" onClick={() => setIdPlus(product.id)}>+</p>
                 </div>
             </div>
                 ))}
                 <div className="total-container">
                     <p className="total">TOTAL</p>
-                    <p className="total-price">$2,999</p>
+                    <p className="total-price">${quantitySum}</p>
                 </div>
                 <button className="checkout-button">
                     <p className="checkout">CHECKOUT</p>

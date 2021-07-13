@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import './checkout.scss';
 import cash from '../../assets/checkout/cashOnDelivery.svg';
 import Summary from '../../components/summary/summary';
+import OrderPopUp from '../../components/order-pop-up/orderPopUp';
 
 const emailRegex = 
   RegExp(/^(([^<>()\[\]\.,;:\s@\"]+(\.[^<>()\[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i);
@@ -9,8 +10,12 @@ const emailRegex =
 const formValid = ({ errors, ...rest }) => {
     let valid = true;
 
-    Object.values(errors).forEach(val => {
-        val.length > 0 && (valid = false);
+    Object?.values(errors)?.forEach(val => {
+        if (window.values) {
+            Object.assign(window.values, {})
+        } else {
+            val.length > 0 && (valid = false);
+        }
     });
 
     Object.values(rest).forEach(val => {
@@ -35,6 +40,7 @@ class Checkout extends React.Component {
             eMoneyNumber: null,
             eMoneyPin: null,
             eMoney: true,
+            popUp: JSON.parse(localStorage.getItem('order')),
             errors: {
                 fullName: "",
                 email: "",
@@ -45,7 +51,7 @@ class Checkout extends React.Component {
                 country: "",
                 eMoneyNumber: "",
                 eMoneyPin: "",
-            }
+            },
         };
     }
 
@@ -133,8 +139,9 @@ class Checkout extends React.Component {
         })
     }
 
-    toggleOrder = () => {
-        setOrder(true);
+    orderPop = () => {
+        localStorage.setItem("order", true)
+        window.location.reload();
     }
     
     render() {
@@ -295,14 +302,15 @@ class Checkout extends React.Component {
 
              <div className="summary-container">
             <div className="summary">
-                <Summary order={toggleOrder} />
+                <Summary />
                 <button className="pay-button">
-                    <p className="subtitle" onClick={this.handleSubmit}>CONTINUE & PAY</p>
+                    <p className="subtitle" onClick={this.orderPop}>CONTINUE & PAY</p>
                 </button>
             </div>
             </div>
             </div>
         </body>
+        <OrderPopUp />
     </div>
     </>
     );
