@@ -30,7 +30,7 @@ function Nav() {
 
     setTimeout(() => {
         total();
-    }, 250)
+    }, 250);
 
 
     if (openCart !== false) {
@@ -169,7 +169,7 @@ function Nav() {
         </div>
         {cartWindow && ( 
             <>
-            <div className="backdrop"></div>
+            <div className="backdrop" onClick={toggleCart}></div>
             <div className="cart-window-container">
                 <div className="cart-window">
                 <div className="header-container">
