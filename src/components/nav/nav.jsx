@@ -7,9 +7,10 @@ import MarkII from '../../assets/product-xx99-mark-two-headphones/desktop/image-
 import ZX9 from '../../assets/category-speakers/desktop/image-zx9.jpg';
 
 function Nav() {
-    const [cartWindow, setCartWindow] = useState(false);
+    const [cartWindow, setCartWindow] = useState(JSON.parse(localStorage.getItem('cartWindow')) || false);
     const [cart, setCart] = useState(JSON.parse(localStorage.getItem('cart')) || []);
     const [openCart, setOpenCart] = useState(JSON.parse(localStorage.getItem('openCart')) || false);
+    const [quantityChanged, setQuantityChanged] = useState(JSON.parse(localStorage.getItem('quantityChanged')) || false);
     const [products] = useState([
         {
         category: 'HEADPHONES',
@@ -27,23 +28,33 @@ function Nav() {
     const [refresh, setRefresh] = useState('');
     const [cartQuantity, setCartQuantity] = useState(0);
     const [quantitySum, setQuantitySum] = useState('');
+    const [doubleRunCounter, setDoubleRunCounter] = useState(0);
 
     setTimeout(() => {
         total();
-    }, 250);
+        // nav();
+    }, 200);
 
+    const nav = () => {
+        if (JSON.parse(localStorage.getItem('quantityChanged')) === true) {
+                setOpenCart(true);
+                setQuantityChanged(false);
+            } else {
+                    console.log('');
+        }
 
-    if (openCart !== false) {
-    setTimeout(() => {
-        setCartWindow(true);
-        console.log('Cart Opens');
-    }, 500);
-} else {
-    console.log('');
-}
+        if (JSON.parse(localStorage.getItem('openCart')) === true) {
+                setCartWindow(true);
+                console.log('Cart Opens');
+            } else {
+                    console.log('Cart Closed');
+            }
+    }
+
 
     const quantityMinus = (event) => {
         const myCart = JSON.parse(localStorage.cart);
+        setQuantityChanged(true);
 
         for (var i = 0; i < myCart.length; i++) {
             if (idMinus === myCart[i].id && myCart[i].quantity.quantity > 1) {
@@ -61,6 +72,7 @@ function Nav() {
 
     const quantityPlus = (event) => {
         const myCart = JSON.parse(localStorage.cart);
+        setQuantityChanged(true);
 
         for (var i = 0; i < myCart.length; i++) {
             if (idPlus === myCart[i].id) {
@@ -91,8 +103,13 @@ function Nav() {
 
     {/* Toggle Function */}
     function toggleCart() {
-        setCartWindow(!cartWindow);
-        setOpenCart(!openCart);
+        if (cartWindow === true) {
+            setCartWindow(false)
+            setOpenCart(false);
+        } else {
+            setCartWindow(true)
+            setOpenCart(true);
+        }
     }
 
     function removeAll() {
@@ -111,6 +128,14 @@ function Nav() {
     }, [openCart]);
 
     useEffect(() => {
+        localStorage.setItem("quantityChanged", JSON.stringify(quantityChanged));
+    }, [quantityChanged]);
+
+    useEffect(() => {
+        localStorage.setItem("cartWindow", JSON.stringify(cartWindow));
+    }, [cartWindow]);
+
+    useEffect(() => {
         if (refresh === true) {
         setRefresh(false);
         window.location.reload();
@@ -122,14 +147,30 @@ function Nav() {
     useEffect(() => {
         quantityPlus()
         setIdPlus('');
-        setOpenCart(true);
+        if (doubleRunCounter == 2) {
+            setOpenCart(true);
+        } else if (doubleRunCounter == 0) {
+            setDoubleRunCounter(doubleRunCounter + 1);
+        } else {
+            setDoubleRunCounter(doubleRunCounter + 1);
+        }
     }, [idPlus]);
 
     useEffect(() => {
         quantityMinus()
         setIdMinus('');
-        setOpenCart(true);
+        if (doubleRunCounter == 2) {
+            setOpenCart(true);
+        } else if (doubleRunCounter == 0) {
+            setDoubleRunCounter(doubleRunCounter + 1);
+        } else {
+            setDoubleRunCounter(doubleRunCounter + 1);
+        }
     }, [idMinus]);
+
+
+
+    console.log(doubleRunCounter + "Double run")
 
     return (
     <>
