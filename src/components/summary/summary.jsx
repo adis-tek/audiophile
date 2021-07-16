@@ -11,9 +11,11 @@ function Summary() {
     const [shipping, setShipping] = useState('');
     const [totalSum, setTotalSum] = useState('');
     const [order, setOrder] = useState(JSON.parse(localStorage.getItem('order')) || []);
+    const [grandTotal, setGrandTotal] = useState(JSON.parse(localStorage.getItem('grandTotal')) || [0]);
 
     setTimeout(() => {
         total();
+        setGrandTotal(quantitySum + (shipping * 1.25));
     }, 200);
 
     const quantityPlus = (event) => {
@@ -47,6 +49,7 @@ function Summary() {
         setShipping(shippingSumCalc.reduce((a, v) => a = a + v , 0));
         console.log(quantitySum);
         console.log(shipping*1.25);
+
     }
 
     useEffect(() => {
@@ -56,6 +59,10 @@ function Summary() {
     useEffect(() => {
         localStorage.setItem("order", JSON.stringify(order));
     }, [order]);
+
+    useEffect(() => {
+        localStorage.setItem("grandTotal", JSON.stringify(grandTotal));
+    }, [grandTotal]);
 
     useEffect(() => {
         if (refresh === true) {
