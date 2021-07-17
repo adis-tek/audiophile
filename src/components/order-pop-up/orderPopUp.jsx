@@ -1,5 +1,6 @@
 import React, { useState, useEffect} from 'react';
 import './order-pop-up.scss';
+import { NavLink } from 'react-router-dom';
 import checkMark from '../../assets/checkout/check-mark.svg';
 
 function OrderPopUp() {
@@ -16,6 +17,10 @@ function OrderPopUp() {
     // } else {
     //     console.log('');
     // }
+
+    setTimeout(() => {
+        localStorage.setItem("order", JSON.stringify(false));
+    }, 0)
 
 
     function toggleOrder() {
@@ -59,7 +64,9 @@ function OrderPopUp() {
             </div>
             </div>
             <div className="button-container">
+            <NavLink exact activeClassName="active" to="/">
             <button className="home-button">BACK TO HOME</button>
+            </NavLink>
             </div>
         </div>
     </div>

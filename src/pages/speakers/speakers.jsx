@@ -1,5 +1,6 @@
 import React from 'react';
 import './speakers.scss';
+import { Link, NavLink } from 'react-router-dom';
 import ProductTrio from '../../components/product-trio/productTrio';
 import BestGear from '../../components/best-gear/bestGear';
 import ZX9 from '../../assets/product-zx9-speaker/desktop/image-product.jpg';
@@ -32,9 +33,11 @@ function speakers() {
                         <p className="banner-body">Upgrade your sound system with the all new ZX9 active speaker. It’s a bookshelf speaker 
                         system that offers truly wireless connectivity -- creating new possibilities for more 
                         pleasing and practical audio setups.</p>
+                        <NavLink exact activeClassName="active" to="/speakers/zx9">
                         <button className="banner-button">
                             <p className="subtitle">SEE PRODUCT</p>
                         </button>
+                        </NavLink>
                 </div>
             </div>
             <div className="product-row-container-right">
@@ -44,9 +47,11 @@ function speakers() {
                         <p className="banner-body">Stream high quality sound wirelessly with minimal loss. The ZX7 bookshelf speaker uses 
                         high-end audiophile components that represents the top of the line powered speakers for 
                         home or studio use.</p>
+                        <NavLink exact activeClassName="active" to="/speakers/zx7">
                         <button className="banner-button">
                             <p className="subtitle">SEE PRODUCT</p>
                         </button>
+                        </NavLink>
                 </div>
             </div>
             <ProductTrio />

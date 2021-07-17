@@ -1,6 +1,7 @@
 import React from 'react';
 import './App.css';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import UtilScroll from './utilScroll';
 import Home from './pages/home/home.jsx';
 import Headphones from './pages/headphones/headphones.jsx';
 import Speakers from './pages/speakers/speakers.jsx';
@@ -19,6 +20,7 @@ function App() {
   return (
     <div className="App">
     <Router>
+    <UtilScroll />
     <Nav />
       <Switch>
       <Route exact path="/" component={Home} />

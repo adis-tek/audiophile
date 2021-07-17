@@ -1,5 +1,6 @@
 import React from 'react';
 import './home.scss';
+import { NavLink } from 'react-router-dom';
 import ProductTrio from '../../components/product-trio/productTrio';
 import BestGear from '../../components/best-gear/bestGear';
 import RightArrow from '../../assets/shared/desktop/icon-arrow-right.svg';
@@ -32,9 +33,11 @@ function home() {
                         <p className="overline">NEW PRODUCT</p>
                         <h1 className="banner-header">XX99 Mark II Headphones</h1>
                         <p className="banner-body">Experience natural, lifelike audio and exceptional build quality made for the passionate music enthusiast.</p>
+                        <NavLink exact activeClassName="active" to="/headphones/mark-two">
                         <button className="banner-button">
                             <p className="subtitle">SEE PRODUCT</p>
                         </button>
+                        </NavLink>
                     </div>
                 </div>
         </div>
@@ -46,18 +49,22 @@ function home() {
                     <div className="text-container">
                         <h1 className="banner-header">ZX9 speaker</h1>
                         <p className="banner-body">Upgrade to premium speakers that are phenomenally built to deliver truly remarkable sound.</p>
+                        <NavLink exact activeClassName="active" to="/speakers/zx9">
                         <button className="banner-button">
                             <p className="subtitle">SEE PRODUCT</p>
                         </button>
+                        </NavLink>
                     </div>
                 </div>
                 <div className="zx7-speaker-banner">
                 <img src={ZX7} alt="zx7 speaker" className="zx7-image" />
                     <div className="text-container">
                         <h3 className="banner-header">ZX7 speaker</h3>
+                        <NavLink exact activeClassName="active" to="/speakers/zx7">
                         <button className="banner-button">
                             <p className="subtitle">SEE PRODUCT</p>
                         </button>
+                        </NavLink>
                     </div>
                 </div>
                 <div className="yx1-speaker-banner">
@@ -65,9 +72,11 @@ function home() {
                 <div className="text-container-background">
                     <div className="text-container">
                         <h3 className="banner-header">YX1 EARPHONES</h3>
+                        <NavLink exact activeClassName="active" to="/earphones/yx1">
                         <button className="banner-button">
                             <p className="subtitle">SEE PRODUCT</p>
                         </button>
+                        </NavLink>
                     </div>
                 </div>
                 </div>

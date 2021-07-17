@@ -160,6 +160,10 @@
       @include styles.flexCenter(center, row);
       width: 100%;
       height: auto;
+      a {
+        width: inherit;
+        height: inherit;
+      }
       .home-button {
         position: relative;
         @include styles.flexCenter(center, row);
@@ -168,6 +172,7 @@
         background-color: styles.$orange;
         color: styles.$white;
         letter-spacing: 1.25px;
+        cursor: pointer;
       }
     }
   }

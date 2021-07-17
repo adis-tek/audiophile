@@ -45,8 +45,12 @@
         background-color: rgb(216, 125, 74);
         width: 160px;
         height: 48px;
+        cursor: pointer;
         .subtitle {
           color: rgb(255, 255, 255);
+          a {
+            color: rgb(255, 255, 255);
+          }
         }
       }
     }
@@ -91,8 +95,12 @@
         background-color: rgb(216, 125, 74);
         width: 160px;
         height: 48px;
+        cursor: pointer;
         .subtitle {
           color: rgb(255, 255, 255);
+          a {
+            color: rgb(255, 255, 255);
+          }
         }
       }
     }
@@ -156,7 +164,8 @@
           margin: 0px 20px 0px 0px;
           .minus {
             position: relative;
-            opacity: 25%;
+            opacity: 33%;
+            cursor: pointer;
           }
           .quantity {
             position: relative;
@@ -164,7 +173,8 @@
           }
           .plus {
             position: relative;
-            opacity: 25%;
+            opacity: 33%;
+            cursor: pointer;
           }
         }
         .banner-button {
@@ -354,8 +364,12 @@
           background-color: rgb(216, 125, 74);
           width: 160px;
           height: 48px;
+          cursor: pointer;
           .subtitle {
             color: rgb(255, 255, 255);
+            a {
+              color: rgb(255, 255, 255);
+            }
           }
         }
       }
@@ -376,6 +390,9 @@
     .go-back-text {
       position: relative;
       cursor: pointer;
+      a {
+        color: rgba(0, 0, 0, 0.8);
+      }
       &:hover {
         text-decoration: underline;
       }

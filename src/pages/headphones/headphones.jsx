@@ -1,5 +1,6 @@
 import React from 'react';
 import './headphones.scss';
+import { Link, NavLink } from 'react-router-dom';
 import ProductTrio from '../../components/product-trio/productTrio';
 import BestGear from '../../components/best-gear/bestGear';
 import MarkI from '../../assets/product-xx99-mark-one-headphones/desktop/image-product.jpg';
@@ -33,9 +34,11 @@ function headphones() {
                         <h1 className="banner-header">XX99 Mark II Headphones</h1>
                         <p className="banner-body">The new XX99 Mark II headphones is the pinnacle of pristine audio. It redefines your premium 
                         headphone experience by reproducing the balanced depth and precision of studio-quality sound.</p>
+                        <NavLink exact activeClassName="active" to="/headphones/mark-two">
                         <button className="banner-button">
                             <p className="subtitle">SEE PRODUCT</p>
                         </button>
+                        </NavLink>
                 </div>
             </div>
             <div className="product-row-container-right">
@@ -44,9 +47,11 @@ function headphones() {
                         <h1 className="banner-header">XX99 Mark I Headphones</h1>
                         <p className="banner-body">As the gold standard for headphones, the classic XX99 Mark I offers detailed and accurate audio 
                         reproduction for audiophiles, mixing engineers, and music aficionados alike in studios and on the go.</p>
+                        <NavLink exact activeClassName="active" to="/headphones/mark-one">
                         <button className="banner-button">
                             <p className="subtitle">SEE PRODUCT</p>
                         </button>
+                        </NavLink>
                 </div>
             </div>
             <div className="product-row-container-left">
@@ -55,9 +60,11 @@ function headphones() {
                         <h1 className="banner-header">XX59 Headphones</h1>
                         <p className="banner-body">Enjoy your audio almost anywhere and customize it to your specific tastes with the XX59 headphones. 
                         The stylish yet durable versatile wireless headset is a brilliant companion at home or on the move.</p>
+                        <NavLink exact activeClassName="active" to="/headphones/xx59">
                         <button className="banner-button">
                             <p className="subtitle">SEE PRODUCT</p>
                         </button>
+                        </NavLink>
                 </div>
             </div>
             <ProductTrio />

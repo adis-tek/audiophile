@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { NavLink } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 import './nav.scss';
 import Logo from '../../assets/shared/desktop/logo.svg';
 import Cart from '../../assets/shared/desktop/icon-cart.svg';
@@ -63,9 +63,11 @@ function Nav() {
                 setOpenCart(true);
                 setRefresh(true);
                 break;
-            } else {
-                setOpenCart(false);
-                console.log("No Id match found");
+            } else if (idMinus === myCart[i].id && myCart[i].quantity.quantity === 1) {
+                myCart.splice(1, 1);
+                localStorage.setItem('cart', JSON.stringify(myCart));
+                window.location.reload();
+                break;
             }
         }
     }
@@ -114,7 +116,7 @@ function Nav() {
 
     function removeAll() {
         setCart([]);
-        setOpenCart(false);
+        // setOpenCart(false);
         window.location.reload();
     }
 
@@ -222,7 +224,7 @@ function Nav() {
                 <img src={product?.image} alt="product image" className="product-image" />
                 <div className="title-container">
                 <h4 className="product-title">{product.name}</h4>
-                <h5 className="product-price">{product.cost}</h5>
+                <h5 className="product-price">${product.cost}</h5>
                 </div>
                 <div className="counter">
                     <p className="minus" onClick={() => setIdMinus(product.id)}>-</p>
@@ -235,9 +237,11 @@ function Nav() {
                     <p className="total">TOTAL</p>
                     <p className="total-price">${quantitySum}</p>
                 </div>
+                <NavLink exact activeClassName="active" to="/checkout" onClick={toggleCart}>
                 <button className="checkout-button">
                     <p className="checkout">CHECKOUT</p>
                 </button>
+                </NavLink>
                 </div>
             </div>
             </>

@@ -1,5 +1,6 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import './x99-mark-one.scss';
+import { Link, NavLink  } from 'react-router-dom';
 import ProductTrio from '../../components/product-trio/productTrio';
 import BestGear from '../../components/best-gear/bestGear';
 import MarkI from '../../assets/product-xx99-mark-one-headphones/desktop/image-product.jpg';
@@ -13,6 +14,49 @@ import Suggestion3 from '../../assets//shared/desktop/image-zx9-speaker.jpg';
 
 
 function XX99MarkOne() {
+    const [quantity, setQuantity] = useState(1);
+    const [cart, setCart] = useState(JSON.parse(localStorage.getItem('cart')) || []);
+    const [cartWindow, setCartWindow] = useState(JSON.parse(localStorage.getItem('cartWindow')) || false);
+    const product = {
+        id: cart?.length + 1,
+        category: 'HEADPHONES',
+        name: 'Mark I',
+        cost: 1750,
+        quantity: {quantity},
+        image: '/images/cartImages/mark-one.jpg',
+    };
+
+    const minusQuantity = () => {
+        if (quantity === 1) {
+            setQuantity(1);
+        } else {
+            setQuantity(quantity - 1)
+        }
+    }
+
+    const plusQuantity = () => {
+        if (quantity === 9) {
+            setQuantity(9);
+        } else {
+            setQuantity(quantity + 1)
+        }
+    }
+
+    const addProduct = () => {
+        setCart([...cart, product]);
+        setCartWindow(true);
+        window.location.reload();
+    }
+
+    useEffect(() => {
+        localStorage.setItem("cart", JSON.stringify(cart));
+    }, [cart]);
+
+    useEffect(() => {
+        localStorage.setItem("cartWindow", JSON.stringify(cartWindow));
+    }, [cartWindow]);
+
+
     return (
 <>
 <div className="headphones-container">
@@ -25,7 +69,11 @@ function XX99MarkOne() {
     <title>Headphones</title>
     </head>
         <body className="headphones-body">
-
+        <div className="go-back-container">
+                <p className="go-back-text">
+                <Link to="/headphones">Go Back</Link>
+                    </p>
+            </div>
             <div className="product-row-container-left">
                 <img src={MarkI} alt="headphones" className="product-image" />
                 <div className="text-container">
@@ -35,12 +83,12 @@ function XX99MarkOne() {
                         and on the go.</p>
                         <h4 className="price">$1,750</h4>
                         <div className="button-container">
-                            <button className="quantity-button-container">
-                                <h4 className="minus">-</h4>
-                                <h4 className="quantity">1</h4>
-                                <h4 className="plus">+</h4>
+                        <button className="quantity-button-container">
+                                <h4 className="minus" onClick={minusQuantity}>-</h4>
+                                <h4 className="quantity">{quantity}</h4>
+                                <h4 className="plus" onClick={plusQuantity}>+</h4>
                             </button>
-                        <button className="banner-button">
+                        <button className="banner-button" onClick={addProduct}>
                             <p className="subtitle">ADD TO CART</p>
                         </button>
                         </div>
@@ -96,23 +144,29 @@ function XX99MarkOne() {
                     <div className="suggestion">
                         <img src={Suggestion1} alt="XX99 Mark II headphones" className="suggestion-image" />
                         <h3 className="product-title">XX99 MARK II</h3>
+                        <NavLink exact activeClassName="active" to="/headphones/mark-two">
                         <button className="banner-button">
                             <p className="subtitle">SEE PRODUCT</p>
                         </button>
+                        </NavLink>
                     </div>
                     <div className="suggestion">
                         <img src={Suggestion2} alt="XX59 headphones" className="suggestion-image" />
                         <h3 className="product-title">XX59</h3>
+                        <NavLink exact activeClassName="active" to="/headphones/xx59">
                         <button className="banner-button">
                             <p className="subtitle">SEE PRODUCT</p>
                         </button>
+                        </NavLink>
                     </div>
                     <div className="suggestion">
                         <img src={Suggestion3} alt="ZX9 Speaker" className="suggestion-image" />
                         <h3 className="product-title">ZX9 Speaker</h3>
+                        <NavLink exact activeClassName="active" to="/speakers/zx9">
                         <button className="banner-button">
                             <p className="subtitle">SEE PRODUCT</p>
                         </button>
+                        </NavLink>
                     </div>
                 </div>
             </div>

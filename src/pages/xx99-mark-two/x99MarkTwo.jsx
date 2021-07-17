@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import './x99-mark-two.scss';
+import { Link, NavLink } from 'react-router-dom';
 import ProductTrio from '../../components/product-trio/productTrio';
 import BestGear from '../../components/best-gear/bestGear';
 import MarkII from '../../assets/product-xx99-mark-two-headphones/desktop/image-product.jpg';
@@ -15,13 +16,14 @@ function X99MarkTwo() {
     const [quantity, setQuantity] = useState(1);
     const [cart, setCart] = useState(JSON.parse(localStorage.getItem('cart')) || []);
     const [openCart, setOpenCart] = useState(JSON.parse(localStorage.getItem('openCart')) || false);
-    const markII = {
+    const [cartWindow, setCartWindow] = useState(JSON.parse(localStorage.getItem('cartWindow')) || false);
+    const product = {
         id: cart?.length + 1,
         category: 'HEADPHONES',
         name: 'Mark II',
         cost: 2999.99,
         quantity: {quantity},
-        image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQ5-QAul_NfAs-s0XW9M087xWyPOGWvbfYjmqSl0QXabZRSYoid47i7kISiAteyIh0YOci5mtQ&usqp=CAc',
+        image: '/images/cartImages/mark-two.jpg',
     };
 
     const minusQuantity = () => {
@@ -40,19 +42,19 @@ function X99MarkTwo() {
         }
     }
 
+    const addProduct = () => {
+        setCart([...cart, product]);
+        setCartWindow(true);
+        window.location.reload();
+    }
+
     useEffect(() => {
         localStorage.setItem("cart", JSON.stringify(cart));
     }, [cart]);
 
     useEffect(() => {
-        localStorage.setItem("openCart", JSON.stringify(openCart));
-    }, [openCart]);
-
-    const addMarkII = () => {
-        setCart([...cart, markII]);
-        setOpenCart(true);
-        window.location.reload();
-    }
+        localStorage.setItem("cartWindow", JSON.stringify(cartWindow));
+    }, [cartWindow]);
 
     return (
 <>
@@ -67,7 +69,9 @@ function X99MarkTwo() {
     </head>
         <body className="headphones-body">
             <div className="go-back-container">
-                <p className="go-back-text">Go Back</p>
+                <p className="go-back-text">
+                <Link to="/headphones">Go Back</Link>
+                    </p>
             </div>
             <div className="product-row-container-left">
                 <img src={MarkII} alt="headphones" className="product-image" />
@@ -83,7 +87,7 @@ function X99MarkTwo() {
                                 <h4 className="quantity">{quantity}</h4>
                                 <h4 className="plus" onClick={plusQuantity}>+</h4>
                             </button>
-                        <button className="banner-button" onClick={addMarkII}>
+                        <button className="banner-button" onClick={addProduct}>
                             <p className="subtitle">ADD TO CART</p>
                         </button>
                         </div>
@@ -144,23 +148,29 @@ function X99MarkTwo() {
                     <div className="suggestion">
                         <img src={Suggestion1} alt="XX99 Mark I headphones" className="suggestion-image" />
                         <h3 className="product-title">XX99 MARK I</h3>
+                        <NavLink exact activeClassName="active" to="/headphones/mark-one">
                         <button className="banner-button">
                             <p className="subtitle">SEE PRODUCT</p>
                         </button>
+                        </NavLink>
                     </div>
                     <div className="suggestion">
                         <img src={Suggestion2} alt="XX99 Mark I headphones" className="suggestion-image" />
-                        <h3 className="product-title">XX99 MARK I</h3>
+                        <h3 className="product-title">XX59</h3>
+                        <NavLink exact activeClassName="active" to="/headphones/xx59">
                         <button className="banner-button">
                             <p className="subtitle">SEE PRODUCT</p>
                         </button>
+                        </NavLink>
                     </div>
                     <div className="suggestion">
                         <img src={Suggestion3} alt="XX99 Mark I headphones" className="suggestion-image" />
-                        <h3 className="product-title">XX99 MARK I</h3>
+                        <h3 className="product-title">ZX9</h3>
+                        <NavLink exact activeClassName="active" to="/speakers/zx9">
                         <button className="banner-button">
                             <p className="subtitle">SEE PRODUCT</p>
                         </button>
+                        </NavLink>
                     </div>
                 </div>
             </div>

@@ -1,5 +1,6 @@
 import React from 'react';
 import './earphones.scss';
+import { Link, NavLink } from 'react-router-dom';
 import ProductTrio from '../../components/product-trio/productTrio';
 import BestGear from '../../components/best-gear/bestGear';
 import YX1 from '../../assets/product-yx1-earphones/desktop/image-product.jpg';
@@ -18,7 +19,7 @@ function earphones() {
     </head>
     <div className="earphones-container-header">
     <div className="earphones-banner">
-        <h2 className="banner-header">SPEAKERS</h2>
+        <h2 className="banner-header">EARPHONES</h2>
         </div>
     </div>
         <body className="earphones-body">
@@ -27,13 +28,15 @@ function earphones() {
                 <img src={YX1} alt="earphones" className="product-image" />
                 <div className="text-container">
                 <p className="overline">NEW PRODUCT</p>
-                        <h1 className="banner-header">ZX9 Speaker</h1>
+                        <h1 className="banner-header">YX1 WIRELESS EARPHONES</h1>
                         <p className="banner-body">Upgrade your sound system with the all new ZX9 active speaker. It’s a bookshelf speaker 
                         system that offers truly wireless connectivity -- creating new possibilities for more 
                         pleasing and practical audio setups.</p>
+                        <NavLink exact activeClassName="active" to="/earphones/yx1">
                         <button className="banner-button">
                             <p className="subtitle">SEE PRODUCT</p>
                         </button>
+                        </NavLink>
                 </div>
             </div>
             <ProductTrio />
