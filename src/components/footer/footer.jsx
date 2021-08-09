@@ -51,6 +51,9 @@ function footer() {
                     </div>
                 </div>
             </div>
+            <div className="footer-mobile">
+                
+            </div>
     </div>
 </>
     )
