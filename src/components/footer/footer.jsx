@@ -52,7 +52,22 @@ function footer() {
                 </div>
             </div>
             <div className="footer-mobile">
-                
+            <div className="links-container">
+                        <ul>
+                            <NavLink exact activeClassName="active" to="/">
+                            <li>HOME</li>
+                            </NavLink>
+                            <NavLink exact activeClassName="active" to="/headphones">
+                            <li>HEADPHONES</li>
+                            </NavLink>
+                            <NavLink exact activeClassName="active" to="/speakers">
+                            <li>SPEAKERS</li>
+                            </NavLink>
+                            <NavLink exact activeClassName="active" to="/earphones">
+                            <li>EARPHONES</li>
+                            </NavLink>
+                        </ul>
+                        </div>
             </div>
     </div>
 </>
