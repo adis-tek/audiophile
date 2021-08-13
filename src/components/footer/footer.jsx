@@ -22,9 +22,32 @@ function footer() {
                 <div className="center-footer-container">
                     <div className="left-footer">
                         <img src={Logo} alt="logo" className="logo" />
+                        <div className="mobile-links-container">
+                        <ul>
+                            <NavLink exact activeClassName="active" to="/">
+                            <li>HOME</li>
+                            </NavLink>
+                            <NavLink exact activeClassName="active" to="/headphones">
+                            <li>HEADPHONES</li>
+                            </NavLink>
+                            <NavLink exact activeClassName="active" to="/speakers">
+                            <li>SPEAKERS</li>
+                            </NavLink>
+                            <NavLink exact activeClassName="active" to="/earphones">
+                            <li>EARPHONES</li>
+                            </NavLink>
+                        </ul>
+                        </div>
                         <p className="footer-paragraph">Audiophile is an all in one stop to fulfill your audio needs. We're a small team of music lovers and sound specialists who are devoted to helping you get the most out of personal audio. 
                         Come and visit our demo facility - we’re open 7 days a week.</p>
+                        <div className="mobile-bottom-container">
                         <p className="footer-sentence">Copyright 2021. All Rights Reserved</p>
+                        <div className="social-media-container">
+                        <img src={FaceBook} alt="facebook logo" className="social" />
+                        <img src={Twitter} alt="twitter logo" className="social" />
+                        <img src={Instagram} alt="instagram logo" className="social" />
+                        </div>
+                        </div>
                     </div>
                     <div className="right-footer">
                         <div className="links-container">
@@ -50,56 +73,6 @@ function footer() {
                         </div>
                     </div>
                 </div>
-            </div>
-            <div className="footer-mobile">
-            <div className="links-container">
-                        <ul>
-                            <NavLink exact activeClassName="active" to="/">
-                            <li>HOME</li>
-                            </NavLink>
-                            <NavLink exact activeClassName="active" to="/headphones">
-                            <li>HEADPHONES</li>
-                            </NavLink>
-                            <NavLink exact activeClassName="active" to="/speakers">
-                            <li>SPEAKERS</li>
-                            </NavLink>
-                            <NavLink exact activeClassName="active" to="/earphones">
-                            <li>EARPHONES</li>
-                            </NavLink>
-                        </ul>
-                        </div>
-                        <div className="links-container">
-                        <ul>
-                            <NavLink exact activeClassName="active" to="/">
-                            <li>HOME</li>
-                            </NavLink>
-                            <NavLink exact activeClassName="active" to="/headphones">
-                            <li>HEADPHONES</li>
-                            </NavLink>
-                            <NavLink exact activeClassName="active" to="/speakers">
-                            <li>SPEAKERS</li>
-                            </NavLink>
-                            <NavLink exact activeClassName="active" to="/earphones">
-                            <li>EARPHONES</li>
-                            </NavLink>
-                        </ul>
-                        </div>
-                        <div className="links-container">
-                        <ul>
-                            <NavLink exact activeClassName="active" to="/">
-                            <li>HOME</li>
-                            </NavLink>
-                            <NavLink exact activeClassName="active" to="/headphones">
-                            <li>HEADPHONES</li>
-                            </NavLink>
-                            <NavLink exact activeClassName="active" to="/speakers">
-                            <li>SPEAKERS</li>
-                            </NavLink>
-                            <NavLink exact activeClassName="active" to="/earphones">
-                            <li>EARPHONES</li>
-                            </NavLink>
-                        </ul>
-                        </div>
             </div>
             </div>
 </>
