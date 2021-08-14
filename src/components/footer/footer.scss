@@ -64,21 +64,21 @@
             width: 100%;
             height: auto;
             margin: 0px 0px 10px 0px;
-            ul {
-              position: relative;
-              display: flex;
-              flex-direction: row;
-              justify-content: flex-start;
-              width: 100%;
-              height: auto;
-              li {
-                color: styles.$white;
-                font-size: 13px;
-                font-weight: 700;
-                letter-spacing: 1.5px;
-                margin: 0px 35px 0px 0px;
-                text-transform: uppercase;
-              }
+          }
+          ul {
+            position: relative;
+            display: flex;
+            flex-direction: row;
+            justify-content: flex-start;
+            width: 100%;
+            height: auto;
+            li {
+              color: styles.$white;
+              font-size: 13px;
+              font-weight: 700;
+              letter-spacing: 1.5px;
+              margin: 0px 35px 0px 0px;
+              text-transform: uppercase;
             }
           }
         }

@@ -70,6 +70,7 @@ function footer() {
                         <img src={FaceBook} alt="facebook logo" className="social" />
                         <img src={Twitter} alt="twitter logo" className="social" />
                         <img src={Instagram} alt="instagram logo" className="social" />
+                        <img src={Instagram} alt="instagram logo" className="social" />
                         </div>
                     </div>
                 </div>
