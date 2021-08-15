@@ -18,6 +18,9 @@ function footer() {
         <link rel="icon" type="image/png" sizes="32x32" href="./assets/favicon-32x32.png" />
         </head>
             <div className="footer">
+                <div className="orange-line-container">
+                <div className="orange-line-mobile" />
+                </div>
                 <div className="orange-line" />
                 <div className="center-footer-container">
                     <div className="left-footer">
@@ -42,7 +45,7 @@ function footer() {
                         Come and visit our demo facility - we’re open 7 days a week.</p>
                         <div className="mobile-bottom-container">
                         <p className="footer-sentence">Copyright 2021. All Rights Reserved</p>
-                        <div className="social-media-container">
+                        <div className="mobile-social-media-container">
                         <img src={FaceBook} alt="facebook logo" className="social" />
                         <img src={Twitter} alt="twitter logo" className="social" />
                         <img src={Instagram} alt="instagram logo" className="social" />
@@ -69,7 +72,6 @@ function footer() {
                         <div className="social-media-container">
                         <img src={FaceBook} alt="facebook logo" className="social" />
                         <img src={Twitter} alt="twitter logo" className="social" />
-                        <img src={Instagram} alt="instagram logo" className="social" />
                         <img src={Instagram} alt="instagram logo" className="social" />
                         </div>
                     </div>
