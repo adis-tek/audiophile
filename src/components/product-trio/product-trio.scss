@@ -16,6 +16,15 @@
     width: 350px;
     height: 204px;
     border-radius: 10px;
+    &#p1 {
+      margin: 0px 5px 0px 0px;
+    }
+    &#p2 {
+      margin: 0px 5px 0px 5px;
+    }
+    &#p3 {
+      margin: 0px 0px 0px 5px;
+    }
     .text-container {
       position: relative;
       display: flex;
@@ -26,13 +35,13 @@
       top: -50px;
       .image {
         position: relative;
-        width: 123px;
+        width: 150px;
         height: 160px;
         object-fit: cover;
       }
       .product-header {
         font-size: 18px;
-        margin: 20px 0px 0px 0px;
+        margin: 15px 0px 0px 0px;
       }
       .shop {
         display: flex;

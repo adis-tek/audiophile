@@ -10,7 +10,7 @@ function productTrio() {
     return (
         <>
                 <div className="product-trio">
-                    <div className="product-container">
+                    <div className="product-container"  id="p1">
                         <div className="text-container">
                         <img src={HeadPhones} alt="headphones" className="image" />
                             <h4 className="product-header">HEADPHONES</h4>
@@ -19,7 +19,7 @@ function productTrio() {
                                  <img src={RightArrow} alt="right-arrow" className="right-arrow" /></p>
                         </div>
                     </div>
-                    <div className="product-container">
+                    <div className="product-container"  id="p2">
                         <div className="text-container">
                         <img src={Speaker} alt="headphones" className="image" />
                             <h4 className="product-header">SPEAKERS</h4>
@@ -28,7 +28,7 @@ function productTrio() {
                                  <img src={RightArrow} alt="right-arrow" className="right-arrow" /></p>
                         </div>
                     </div>
-                    <div className="product-container">
+                    <div className="product-container"  id="p3">
                         <div className="text-container">
                         <img src={Earphones} alt="headphones" className="image" />
                             <h4 className="product-header">EARPHONES</h4>
@@ -41,5 +41,5 @@ function productTrio() {
         </>
     )
 }
-
+ 
 export default productTrio
