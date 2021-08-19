@@ -109,6 +109,10 @@
       overflow: hidden;
       margin: 0px 0px 40px 0px;
       border-radius: 10px;
+      @media screen and (max-width: styles.$screen-lg-max) {
+        height: 720px;
+        justify-content: center;
+      }
       .zx9-image {
         position: absolute;
         bottom: -15px;
@@ -117,6 +121,12 @@
         height: 450px;
         z-index: 9999;
         object-fit: cover;
+        @media screen and (max-width: styles.$screen-lg-max) {
+          left: 36%;
+          top: 70px;
+          width: 197px;
+          height: 237px;
+        }
       }
       .orange-lines {
         position: absolute;
@@ -125,6 +135,11 @@
         width: 944px;
         height: 944px;
         object-fit: cover;
+        @media screen and (max-width: styles.$screen-lg-max) {
+          left: -22%;
+          top: -280px;
+          bottom: 0px;
+        }
       }
       .text-container {
         position: relative;
@@ -135,6 +150,14 @@
         width: 30%;
         height: 305px;
         margin: 0px 90px 0px 0px;
+        @media screen and (max-width: styles.$screen-lg-max) {
+          justify-content: space-around;
+          align-items: center;
+          text-align: center;
+          margin: 0px;
+          width: 50%;
+          top: 160px;
+        }
       }
       .banner-header {
         color: styles.$white;
