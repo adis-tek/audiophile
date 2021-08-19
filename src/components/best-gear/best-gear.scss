@@ -5,24 +5,42 @@
   @include styles.flexCenter(space-between, row);
   height: auto;
   margin: 0px 0px 120px 0px;
+  @media screen and (max-width: 1025px) {
+    @include styles.flexCenter(space-between, column-reverse);
+  }
   .text-container {
     position: relative;
     width: 40%;
     height: 100%;
+    @media screen and (max-width: 1025px) {
+      width: 90%;
+    }
     .best-gear-heading {
       position: relative;
+      text-align: left;
       text-transform: uppercase;
       width: 100%;
+      @media screen and (max-width: 1025px) {
+        text-align: center;
+        margin: 40px 0px 0px 0px;
+      }
       .highlight {
         color: styles.$orange;
       }
     }
     .best-gear-body {
+      text-align: left;
       margin: 30px 0px 0px 0px;
+      @media screen and (max-width: 1025px) {
+        text-align: center;
+      }
     }
   }
   .best-gear-image {
     position: relative;
     width: 45%;
+    @media screen and (max-width: 1025px) {
+      width: 90%;
+    }
   }
 }

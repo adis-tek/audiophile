@@ -16,9 +16,11 @@ function bestGear() {
             audio equipment.</p>
             </div>
             <img src={Listener} alt="listener" className="best-gear-image" />
+            {/* <img src={Listener} alt="listener" className="best-gear-image" />
+            <img src={Listener} alt="listener" className="best-gear-image" /> */}
         </div>
     </>
     )
 }
 
-export default bestGear;
+export default bestGear; 
