@@ -136,9 +136,11 @@
         height: 944px;
         object-fit: cover;
         @media screen and (max-width: styles.$screen-lg-max) {
-          left: -22%;
-          top: -280px;
+          left: -8%;
+          top: -330px;
           bottom: 0px;
+          width: 115%;
+          height: 140%;
         }
       }
       .text-container {
@@ -195,20 +197,38 @@
       overflow: hidden;
       margin: 0px 0px 40px 0px;
       border-radius: 10px;
-      .zx7-image {
+      .zx7-image-desktop {
         position: absolute;
+        display: block;
         width: 100%;
         height: 100%;
         z-index: 0;
         object-fit: cover;
+        @media screen and (max-width: styles.$screen-lg-max) {
+          display: none;
+        }
       }
-      .orange-lines {
-        position: absolute;
-        bottom: -350px;
-        left: -130px;
-        width: 944px;
-        height: 944px;
-        object-fit: cover;
+      .zx7-image-tablet {
+        display: none;
+        @media screen and (max-width: styles.$screen-lg-max) {
+          position: absolute;
+          display: block;
+          width: 100%;
+          height: 100%;
+          z-index: 0;
+          object-fit: cover;
+        }
+      }
+      .zx7-image-mobile {
+        display: none;
+        @media screen and (max-width: styles.$screen-md-max) {
+          position: absolute;
+          display: block;
+          width: 100%;
+          height: 100%;
+          z-index: 0;
+          object-fit: cover;
+        }
       }
       .text-container {
         position: relative;
@@ -250,12 +270,40 @@
       height: 320px;
       overflow: hidden;
       margin: 0px 0px 120px 0px;
-      .yx1-image {
+      .yx1-image-desktop {
         position: relative;
         height: 100%;
         z-index: 0;
         object-fit: cover;
         border-radius: 10px;
+        @media screen and (max-width: styles.$screen-lg-max) {
+          display: none;
+        }
+      }
+      .yx1-image-tablet {
+        display: none;
+        @media screen and (max-width: styles.$screen-lg-max) {
+          position: relative;
+          display: block;
+          height: 100%;
+          z-index: 0;
+          object-fit: cover;
+          border-radius: 10px;
+        }
+        @media screen and (max-width: styles.$screen-md-max) {
+          display: none;
+        }
+      }
+      .yx1-image-mobile {
+        display: none;
+        @media screen and (max-width: styles.$screen-md-max) {
+          position: relative;
+          display: block;
+          height: 100%;
+          z-index: 0;
+          object-fit: cover;
+          border-radius: 10px;
+        }
       }
       .text-container-background {
         position: relative;
@@ -264,6 +312,10 @@
         height: 100%;
         width: 45%;
         border-radius: 10px;
+        @media screen and (max-width: styles.$screen-lg-max) {
+          width: 100%;
+          margin: 0px 0px 0px 15px;
+        }
       }
       .text-container {
         position: relative;
@@ -274,6 +326,9 @@
         width: 90%;
         height: auto;
         margin: 0px 0px 0px 120px;
+        @media screen and (max-width: styles.$screen-lg-max) {
+          width: 100%;
+        }
       }
       .banner-header {
         color: styles.$black;

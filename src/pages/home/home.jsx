@@ -8,8 +8,12 @@ import HeadPhones from '../../assets/shared/desktop/image-headphones.png';
 import Speaker from '../../assets/shared/desktop/image-speakers.png';
 import Earphones from '../../assets/shared/desktop/image-earphones.png';
 import ZX9 from '../../assets/home/desktop/image-speaker-zx9.png';
-import ZX7 from '../../assets/home/desktop/image-speaker-zx7.jpg';
-import YX1 from '../../assets/home/desktop/image-earphones-yx1.jpg';
+import ZX7Desktop from '../../assets/home/desktop/image-speaker-zx7.jpg';
+import ZX7Tablet from '../../assets/home/tablet/image-speaker-zx7.jpg';
+import ZX7Mobile from '../../assets/home/mobile/image-speaker-zx7.jpg';
+import YX1Desktop from '../../assets/home/desktop/image-earphones-yx1.jpg';
+import YX1Tablet from '../../assets/home/tablet/image-earphones-yx1.jpg';
+import YX1Mobile from '../../assets/home/mobile/image-earphones-yx1.jpg';
 import OrangeLines from '../../assets/home/desktop/pattern-circles.svg';
 import Listener from '../../assets/shared/desktop/image-best-gear.jpg';
 
@@ -57,7 +61,9 @@ function home() {
                     </div>
                 </div>
                 <div className="zx7-speaker-banner">
-                <img src={ZX7} alt="zx7 speaker" className="zx7-image" />
+                <img src={ZX7Desktop} alt="zx7 speaker" className="zx7-image-desktop" />
+                <img src={ZX7Tablet} alt="zx7 speaker" className="zx7-image-tablet" />
+                <img src={ZX7Mobile} alt="zx7 speaker" className="zx7-image-mobile" />
                     <div className="text-container">
                         <h3 className="banner-header">ZX7 speaker</h3>
                         <NavLink exact activeClassName="active" to="/speakers/zx7">
@@ -68,7 +74,9 @@ function home() {
                     </div>
                 </div>
                 <div className="yx1-speaker-banner">
-                <img src={YX1} alt="yx1 speaker" className="yx1-image" />
+                <img src={YX1Desktop} alt="yx1 speaker" className="yx1-image-desktop" />
+                <img src={YX1Tablet} alt="yx1 speaker" className="yx1-image-tablet" />
+                <img src={YX1Mobile} alt="yx1 speaker" className="yx1-image-mobile" />
                 <div className="text-container-background">
                     <div className="text-container">
                         <h3 className="banner-header">YX1 EARPHONES</h3>
