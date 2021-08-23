@@ -134,7 +134,10 @@
           color: styles.$white;
           opacity: 0.5;
           width: 90%;
-          text-align: center;
+          text-align: left;
+          @media screen and (max-width: 500px) {
+            text-align: center;
+          }
         }
         .mobile-bottom-container {
           position: relative;
