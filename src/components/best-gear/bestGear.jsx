@@ -1,6 +1,8 @@
 import React from 'react';
 import './best-gear.scss';
-import Listener from '../../assets/shared/desktop/image-best-gear.jpg';
+import ListenerDesktop from '../../assets/shared/desktop/image-best-gear.jpg';
+import ListenerTablet from '../../assets/shared/tablet/image-best-gear.jpg';
+import ListenerMobile from '../../assets/shared/mobile/image-best-gear.jpg';
 
 
 function bestGear() {
@@ -15,12 +17,12 @@ function bestGear() {
             to meet some of the fantastic people who make Audiophile the best place to buy your portable 
             audio equipment.</p>
             </div>
-            <img src={Listener} alt="listener" className="best-gear-image" />
-            {/* <img src={Listener} alt="listener" className="best-gear-image" />
-            <img src={Listener} alt="listener" className="best-gear-image" /> */}
+            <img src={ListenerDesktop} alt="listener" className="best-gear-image-desktop" />
+            <img src={ListenerTablet} alt="listener" className="best-gear-image-tablet" />
+            <img src={ListenerMobile} alt="listener" className="best-gear-image-mobile" />
         </div>
     </>
     )
 }
 
-export default bestGear; 
+export default bestGear;  

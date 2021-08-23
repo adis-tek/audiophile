@@ -24,6 +24,10 @@
         text-align: center;
         margin: 40px 0px 0px 0px;
       }
+      @media screen and (max-width: 500px) {
+        font-size: 28px;
+        margin: 20px 0px 0px 0px;
+      }
       .highlight {
         color: styles.$orange;
       }
@@ -34,13 +38,35 @@
       @media screen and (max-width: 1025px) {
         text-align: center;
       }
+      @media screen and (max-width: 500px) {
+        margin: 20px 0px 0px 0px;
+      }
     }
   }
-  .best-gear-image {
+  .best-gear-image-desktop {
     position: relative;
     width: 45%;
-    @media screen and (max-width: 1025px) {
+    @media screen and (max-width: styles.$screen-lg-max) {
+      display: none;
+    }
+  }
+  .best-gear-image-tablet {
+    display: none;
+    @media screen and (max-width: styles.$screen-lg-max) {
+      position: relative;
+      display: block;
       width: 90%;
+    }
+    @media screen and (max-width: styles.$screen-md-max) {
+      display: none;
+    }
+  }
+  .best-gear-image-mobile {
+    display: none;
+    @media screen and (max-width: styles.$screen-md-max) {
+      position: relative;
+      display: block;
+      width: 100%;
     }
   }
 }
