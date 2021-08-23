@@ -17,6 +17,11 @@
       background-size: cover;
       height: 729px;
     }
+    @media screen and (max-width: styles.$screen-md-max) {
+      background-image: url("../../assets/home/mobile/image-header.jpg");
+      background-size: cover;
+      height: 729px;
+    }
   }
   .banner-text-container {
     position: relative;
@@ -44,6 +49,12 @@
         align-items: center;
         text-align: center;
       }
+      @media screen and (max-width: styles.$screen-md-max) {
+        width: 60%;
+      }
+      @media screen and (max-width: styles.$screen-sm-max) {
+        width: 85%;
+      }
       .overline {
         color: styles.$white;
         opacity: 50%;
@@ -59,6 +70,9 @@
         @media screen and (max-width: styles.$screen-lg-max) {
           text-align: center;
           width: 100%;
+        }
+        @media screen and (max-width: styles.$screen-md-max) {
+          font-size: 36px;
         }
       }
       .banner-body {
@@ -79,6 +93,9 @@
         background-color: styles.$orange;
         margin: 0px 0px 0px 0px;
         cursor: pointer;
+        @media screen and (max-width: styles.$screen-md-max) {
+          margin: 5px 0px 0px 0px;
+        }
         .subtitle {
           color: styles.$white;
         }
@@ -126,6 +143,12 @@
           top: 70px;
           width: 197px;
           height: 237px;
+        }
+        @media screen and (max-width: styles.$screen-md-max) {
+          left: 33%;
+          top: 60px;
+          width: 180px;
+          height: auto;
         }
       }
       .orange-lines {
