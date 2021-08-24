@@ -3,13 +3,17 @@ import './headphones.scss';
 import { Link, NavLink } from 'react-router-dom';
 import ProductTrio from '../../components/product-trio/productTrio';
 import BestGear from '../../components/best-gear/bestGear';
-import MarkI from '../../assets/product-xx99-mark-one-headphones/desktop/image-product.jpg';
-import MarkII from '../../assets/product-xx99-mark-two-headphones/desktop/image-product.jpg';
-import XX59 from '../../assets/product-xx59-headphones/desktop/image-product.jpg';
+import MarkIDesktop from '../../assets/product-xx99-mark-one-headphones/desktop/image-product.jpg';
+import MarkIMobile from '../../assets/product-xx99-mark-one-headphones/mobile/image-product.jpg';
+import MarkIIDesktop from '../../assets/product-xx99-mark-two-headphones/desktop/image-product.jpg';
+import MarkIITablet from '../../assets/product-xx99-mark-two-headphones/tablet/image-product.jpg';
+import MarkIIMobile from '../../assets/product-xx99-mark-two-headphones/mobile/image-product.jpg';
+import XX59Desktop from '../../assets/product-xx59-headphones/desktop/image-product.jpg';
+import XX59Mobile from '../../assets/product-xx59-headphones/mobile/image-product.jpg';
 
 
 function headphones() {
-    return (
+    return ( 
 <>
 <div className="headphones-container">
     <head>
@@ -28,7 +32,8 @@ function headphones() {
         <body className="headphones-body">
 
             <div className="product-row-container-left">
-                <img src={MarkII} alt="headphones" className="product-image" />
+                <img src={MarkIIDesktop} alt="headphones" className="product-image-desktop" />
+                <img src={MarkIIMobile} alt="headphones" className="product-image-mobile" />
                 <div className="text-container">
                 <p className="overline">NEW PRODUCT</p>
                         <h1 className="banner-header">XX99 Mark II Headphones</h1>
@@ -42,7 +47,8 @@ function headphones() {
                 </div>
             </div>
             <div className="product-row-container-right">
-                <img src={MarkI} alt="headphones" className="product-image" />
+                <img src={MarkIDesktop} alt="headphones" className="product-image-desktop" />
+                <img src={MarkIMobile} alt="headphones" className="product-image-mobile" />
                 <div className="text-container">
                         <h1 className="banner-header">XX99 Mark I Headphones</h1>
                         <p className="banner-body">As the gold standard for headphones, the classic XX99 Mark I offers detailed and accurate audio 
@@ -55,7 +61,8 @@ function headphones() {
                 </div>
             </div>
             <div className="product-row-container-left">
-                <img src={XX59} alt="headphones" className="product-image" />
+                <img src={XX59Desktop} alt="headphones" className="product-image-desktop" />
+                <img src={XX59Mobile} alt="headphones" className="product-image-mobile" />
                 <div className="text-container">
                         <h1 className="banner-header">XX59 Headphones</h1>
                         <p className="banner-body">Enjoy your audio almost anywhere and customize it to your specific tastes with the XX59 headphones. 

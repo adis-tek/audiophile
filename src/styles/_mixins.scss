@@ -17,11 +17,30 @@
     width: 100%;
     height: 560px;
     margin: 0px 0px 120px 0px;
-    .product-image {
+    @media screen and (max-width: 1025px) {
+      flex-direction: column;
+      height: auto;
+    }
+    .product-image-desktop {
       position: relative;
+      display: flex;
       width: 50%;
       height: auto;
       object-fit: cover;
+      @media screen and (max-width: 1025px) {
+        display: none;
+      }
+    }
+    .product-image-mobile {
+      display: none;
+      @media screen and (max-width: 1025px) {
+        position: relative;
+        display: flex;
+        height: auto;
+        object-fit: cover;
+        width: 100%;
+        margin: 0px 0px 40px 0px;
+      }
     }
     .text-container {
       position: relative;
@@ -31,14 +50,32 @@
       align-items: flex-start;
       width: 40%;
       height: 343px;
+      @media screen and (max-width: 1025px) {
+        width: 100%;
+        height: auto;
+        text-align: center;
+        align-items: center;
+      }
       .overline {
         color: rgb(216, 125, 74);
+        @media screen and (max-width: 1025px) {
+          width: 100%;
+          margin: 0px 0px 10px 0px;
+        }
       }
       .banner-header {
         position: relative;
+        display: flex;
+        @media screen and (max-width: 1025px) {
+          margin: 25px 0px 0px 0px;
+        }
       }
       .banner-body {
         position: relative;
+        display: flex;
+        @media screen and (max-width: 1025px) {
+          margin: 25px 0px 0px 0px;
+        }
       }
       .banner-button {
         position: relative;
@@ -46,6 +83,9 @@
         width: 160px;
         height: 48px;
         cursor: pointer;
+        @media screen and (max-width: 1025px) {
+          margin: 25px 0px 0px 0px;
+        }
         .subtitle {
           color: rgb(255, 255, 255);
           a {
@@ -67,11 +107,30 @@
     width: 100%;
     height: 560px;
     margin: 0px 0px 120px 0px;
-    .product-image {
+    @media screen and (max-width: 1025px) {
+      flex-direction: column;
+      height: auto;
+    }
+    .product-image-desktop {
       position: relative;
+      display: flex;
       width: 50%;
       height: auto;
       object-fit: cover;
+      @media screen and (max-width: 1025px) {
+        display: none;
+      }
+    }
+    .product-image-mobile {
+      display: none;
+      @media screen and (max-width: 1025px) {
+        position: relative;
+        display: flex;
+        height: auto;
+        object-fit: cover;
+        width: 100%;
+        margin: 0px 0px 40px 0px;
+      }
     }
     .text-container {
       position: relative;
@@ -81,14 +140,32 @@
       align-items: flex-start;
       width: 40%;
       height: 343px;
+      @media screen and (max-width: 1025px) {
+        width: 100%;
+        height: auto;
+        text-align: center;
+        align-items: center;
+      }
       .overline {
         color: rgb(216, 125, 74);
+        @media screen and (max-width: 1025px) {
+          width: 100%;
+          margin: 0px 0px 10px 0px;
+        }
       }
       .banner-header {
         position: relative;
+        display: flex;
+        @media screen and (max-width: 1025px) {
+          margin: 25px 0px 0px 0px;
+        }
       }
       .banner-body {
         position: relative;
+        display: flex;
+        @media screen and (max-width: 1025px) {
+          margin: 25px 0px 0px 0px;
+        }
       }
       .banner-button {
         position: relative;
@@ -96,6 +173,9 @@
         width: 160px;
         height: 48px;
         cursor: pointer;
+        @media screen and (max-width: 1025px) {
+          margin: 25px 0px 0px 0px;
+        }
         .subtitle {
           color: rgb(255, 255, 255);
           a {
@@ -108,7 +188,7 @@
 }
 
 @mixin productRowLeftProductPage {
-  .product-row-container-left {
+  .product-page-row-container-left {
     position: relative;
     display: flex;
     flex-direction: row;
@@ -192,7 +272,7 @@
 }
 
 @mixin product-description {
-  .product-description-container {
+  .product-page-description-container {
     position: relative;
     display: flex;
     flex-direction: row;
