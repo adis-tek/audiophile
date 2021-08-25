@@ -3,8 +3,10 @@ import './speakers.scss';
 import { Link, NavLink } from 'react-router-dom';
 import ProductTrio from '../../components/product-trio/productTrio';
 import BestGear from '../../components/best-gear/bestGear';
-import ZX9 from '../../assets/product-zx9-speaker/desktop/image-product.jpg';
-import ZX7 from '../../assets/product-zx7-speaker/desktop/image-product.jpg';
+import ZX9Desktop from '../../assets/product-zx9-speaker/desktop/image-product.jpg';
+import ZX9Mobile from '../../assets/product-zx9-speaker/mobile/image-product.jpg';
+import ZX7Desktop from '../../assets/product-zx7-speaker/desktop/image-product.jpg';
+import ZX7Mobile from '../../assets/product-zx7-speaker/mobile/image-product.jpg';
 
 function speakers() {
     return (
@@ -26,7 +28,8 @@ function speakers() {
         <body className="speakers-body">
 
             <div className="product-row-container-left">
-                <img src={ZX9} alt="speaker" className="product-image" />
+                <img src={ZX9Desktop} alt="speaker" className="product-image-desktop" />
+                <img src={ZX9Mobile} alt="speaker" className="product-image-mobile" />
                 <div className="text-container">
                 <p className="overline">NEW PRODUCT</p>
                         <h1 className="banner-header">ZX9 Speaker</h1>
@@ -41,7 +44,8 @@ function speakers() {
                 </div>
             </div>
             <div className="product-row-container-right">
-                <img src={ZX7} alt="headphones" className="product-image" />
+                <img src={ZX7Desktop} alt="headphones" className="product-image-desktop" />
+                <img src={ZX7Mobile} alt="headphones" className="product-image-mobile" />
                 <div className="text-container">
                         <h1 className="banner-header">ZX7 Speaker</h1>
                         <p className="banner-body">Stream high quality sound wirelessly with minimal loss. The ZX7 bookshelf speaker uses 

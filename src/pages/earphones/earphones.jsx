@@ -3,7 +3,8 @@ import './earphones.scss';
 import { Link, NavLink } from 'react-router-dom';
 import ProductTrio from '../../components/product-trio/productTrio';
 import BestGear from '../../components/best-gear/bestGear';
-import YX1 from '../../assets/product-yx1-earphones/desktop/image-product.jpg';
+import YX1Desktop from '../../assets/product-yx1-earphones/desktop/image-product.jpg';
+import YX1Mobile from '../../assets/product-yx1-earphones/mobile/image-product.jpg';
 
 function earphones() {
     return (
@@ -25,7 +26,8 @@ function earphones() {
         <body className="earphones-body">
 
             <div className="product-row-container-left">
-                <img src={YX1} alt="earphones" className="product-image" />
+                <img src={YX1Desktop} alt="earphones" className="product-image-desktop" />
+                <img src={YX1Mobile} alt="earphones" className="product-image-mobile" />
                 <div className="text-container">
                 <p className="overline">NEW PRODUCT</p>
                         <h1 className="banner-header">YX1 WIRELESS EARPHONES</h1>
