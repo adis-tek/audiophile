@@ -197,12 +197,40 @@
     width: 100%;
     height: 560px;
     margin: 0px 0px 120px 0px;
-    .product-image {
+    .product-image-desktop {
+      display: block;
       position: relative;
       width: 50%;
       height: auto;
       object-fit: cover;
+      @media screen and (max-width: 1025px) {
+        display: none;
+      }
     }
+    .product-image-tablet {
+      display: none;
+      @media screen and (max-width: 1025px) {
+        display: block;
+        position: relative;
+        width: 50%;
+        height: auto;
+        object-fit: cover;
+      }
+      @media screen and (max-width: 768px) {
+        display: none;
+      }
+    }
+    .product-image-mobile {
+      display: none;
+      @media screen and (max-width: 768px) {
+        display: block;
+        position: relative;
+        width: 50%;
+        height: auto;
+        object-fit: cover;
+      }
+    }
+
     .text-container {
       position: relative;
       display: flex;

@@ -3,7 +3,9 @@ import './x99-mark-two.scss';
 import { Link, NavLink } from 'react-router-dom';
 import ProductTrio from '../../components/product-trio/productTrio';
 import BestGear from '../../components/best-gear/bestGear';
-import MarkII from '../../assets/product-xx99-mark-two-headphones/desktop/image-product.jpg';
+import MarkIIDesktop from '../../assets/product-xx99-mark-two-headphones/desktop/image-product.jpg';
+import MarkIITablet from '../../assets/product-xx99-mark-two-headphones/tablet/image-product.jpg';
+import MarkIIMobile from '../../assets/product-xx99-mark-two-headphones/mobile/image-product.jpg';
 import Gallery1 from '../../assets/product-xx99-mark-two-headphones/desktop/image-gallery-1.jpg';
 import Gallery2 from '../../assets/product-xx99-mark-two-headphones/desktop/image-gallery-2.jpg';
 import Gallery3 from '../../assets/product-xx99-mark-two-headphones/desktop/image-gallery-3.jpg';
@@ -74,7 +76,9 @@ function X99MarkTwo() {
                     </p>
             </div>
             <div className="product-page-row-container-left">
-                <img src={MarkII} alt="headphones" className="product-image" />
+                <img src={MarkIIDesktop} alt="headphones" className="product-image-desktop" />
+                <img src={MarkIITablet} alt="headphones" className="product-image-tablet" />
+                <img src={MarkIIMobile} alt="headphones" className="product-image-mobile" />
                 <div className="text-container">
                 <p className="overline">NEW PRODUCT</p>
                         <h2 className="banner-header">XX99 Mark II Headphones</h2>
@@ -93,7 +97,7 @@ function X99MarkTwo() {
                         </div>
                 </div>
             </div>
-            <div className="product-description-container">
+            <div className="product-page-description-container">
                 <div className="features-container">
                     <h3 className="features-header">FEATURES</h3>
                     <p className="body">Featuring a genuine leather head strap and premium earcups, these headphones deliver superior 
