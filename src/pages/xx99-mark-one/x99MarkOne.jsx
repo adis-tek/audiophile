@@ -74,7 +74,7 @@ function XX99MarkOne() {
                 <Link to="/headphones">Go Back</Link>
                     </p>
             </div>
-            <div className="product-row-container-left">
+            <div className="product-page-row-container-left">
                 <img src={MarkI} alt="headphones" className="product-image" />
                 <div className="text-container">
                         <h2 className="banner-header">XX99 Mark I Headphones</h2>

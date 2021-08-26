@@ -73,7 +73,7 @@ function X99MarkTwo() {
                 <Link to="/headphones">Go Back</Link>
                     </p>
             </div>
-            <div className="product-row-container-left">
+            <div className="product-page-row-container-left">
                 <img src={MarkII} alt="headphones" className="product-image" />
                 <div className="text-container">
                 <p className="overline">NEW PRODUCT</p>

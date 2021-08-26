@@ -73,7 +73,7 @@ function ZX9() {
                 <Link to="/speakers">Go Back</Link>
                     </p>
             </div>
-            <div className="product-row-container-left">
+            <div className="product-page-row-container-left">
                 <img src={zx9} alt="headphones" className="product-image" />
                 <div className="text-container">
                 <p className="overline">NEW PRODUCT</p>

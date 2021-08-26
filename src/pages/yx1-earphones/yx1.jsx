@@ -72,7 +72,7 @@ function YX1() {
                 <Link to="/earphones">Go Back</Link>
                     </p>
             </div>
-            <div className="product-row-container-left">
+            <div className="product-page-row-container-left">
                 <img src={yx1} alt="headphones" className="product-image" />
                 <div className="text-container">
                 <p className="overline">NEW PRODUCT</p>
