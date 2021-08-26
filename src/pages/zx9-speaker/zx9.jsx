@@ -94,7 +94,7 @@ function ZX9() {
                         </div>
                 </div>
             </div>
-            <div className="product-description-container">
+            <div className="product-page-description-container">
                 <div className="features-container">
                     <h3 className="features-header">FEATURES</h3>
                     <p className="body">Connect via Bluetooth or nearly any wired source. This speaker features optical, digital coaxial, 

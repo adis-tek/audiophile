@@ -94,7 +94,7 @@ function XX99MarkOne() {
                         </div>
                 </div>
             </div>
-            <div className="product-description-container">
+            <div className="product-page-description-container">
                 <div className="features-container">
                     <h3 className="features-header">FEATURES</h3>
                     <p className="body">As the headphones all others are measured against, the XX99 Mark I demonstrates over five decades 

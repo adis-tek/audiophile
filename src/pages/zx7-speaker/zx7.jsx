@@ -92,7 +92,7 @@ function ZX7() {
                         </div>
                 </div>
             </div>
-            <div className="product-description-container">
+            <div className="product-page-description-container">
                 <div className="features-container">
                     <h3 className="features-header">FEATURES</h3>
                     <p className="body">Reap the advantages of a flat diaphragm tweeter cone. This provides a fast response rate and 

@@ -92,7 +92,7 @@ function YX1() {
                         </div>
                 </div>
             </div>
-            <div className="product-description-container">
+            <div className="product-page-description-container">
                 <div className="features-container">
                     <h3 className="features-header">FEATURES</h3>
                     <p className="body">Experience unrivalled stereo sound thanks to innovative acoustic technology. With improved ergonomics 
