@@ -3,7 +3,9 @@ import './x99-mark-one.scss';
 import { Link, NavLink  } from 'react-router-dom';
 import ProductTrio from '../../components/product-trio/productTrio';
 import BestGear from '../../components/best-gear/bestGear';
-import MarkI from '../../assets/product-xx99-mark-one-headphones/desktop/image-product.jpg';
+import MarkIDesktop from '../../assets/product-xx99-mark-one-headphones/desktop/image-product.jpg';
+import MarkITablet from '../../assets/product-xx99-mark-one-headphones/tablet/image-product.jpg';
+import MarkIMobile from '../../assets/product-xx99-mark-one-headphones/mobile/image-product.jpg';
 import Gallery1 from '../../assets/product-xx99-mark-one-headphones/desktop/image-gallery-1.jpg';
 import Gallery2 from '../../assets/product-xx99-mark-one-headphones/desktop/image-gallery-2.jpg';
 import Gallery3 from '../../assets/product-xx99-mark-one-headphones/desktop/image-gallery-3.jpg';
@@ -75,7 +77,9 @@ function XX99MarkOne() {
                     </p>
             </div>
             <div className="product-page-row-container-left">
-                <img src={MarkI} alt="headphones" className="product-image" />
+            <img src={MarkIDesktop} alt="headphones" className="product-image-desktop" />
+            <img src={MarkITablet} alt="headphones" className="product-image-tablet" />
+            <img src={MarkIMobile} alt="headphones" className="product-image-mobile" />
                 <div className="text-container">
                         <h2 className="banner-header">XX99 Mark I Headphones</h2>
                         <p className="banner-body">As the gold standard for headphones, the classic XX99 Mark I offers detailed and accurate 

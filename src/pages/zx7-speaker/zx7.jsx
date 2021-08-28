@@ -3,7 +3,9 @@ import './zx7.scss';
 import { Link, NavLink } from 'react-router-dom';
 import ProductTrio from '../../components/product-trio/productTrio';
 import BestGear from '../../components/best-gear/bestGear';
-import zx7 from '../../assets/product-zx7-speaker/desktop/image-product.jpg';
+import zx7Desktop from '../../assets/product-zx7-speaker/desktop/image-product.jpg';
+import zx7Tablet from '../../assets/product-zx7-speaker/tablet/image-product.jpg';
+import zx7Mobile from '../../assets/product-zx7-speaker/mobile/image-product.jpg';
 import Gallery1 from '../../assets/product-zx7-speaker/desktop/image-gallery-1.jpg';
 import Gallery2 from '../../assets/product-zx7-speaker/desktop/image-gallery-2.jpg';
 import Gallery3 from '../../assets/product-zx7-speaker/desktop/image-gallery-3.jpg';
@@ -74,7 +76,9 @@ function ZX7() {
                     </p>
             </div>
             <div className="product-page-row-container-left">
-                <img src={zx7} alt="headphones" className="product-image" />
+            <img src={zx7Desktop} alt="headphones" className="product-image-desktop" />
+            <img src={zx7Tablet} alt="headphones" className="product-image-tablet" />
+            <img src={zx7Mobile} alt="headphones" className="product-image-mobile" />
                 <div className="text-container">
                         <h2 className="banner-header">ZX7 SPEAKER</h2>
                         <p className="banner-body">Stream high quality sound wirelessly with minimal to no loss. The ZX7 speaker uses high-end 

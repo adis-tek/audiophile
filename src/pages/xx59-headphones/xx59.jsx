@@ -3,7 +3,9 @@ import './xx59.scss';
 import { Link, NavLink } from 'react-router-dom';
 import ProductTrio from '../../components/product-trio/productTrio';
 import BestGear from '../../components/best-gear/bestGear';
-import xx59 from '../../assets/product-xx59-headphones/desktop/image-product.jpg';
+import xx59Desktop from '../../assets/product-xx59-headphones/desktop/image-product.jpg';
+import xx59Tablet from '../../assets/product-xx59-headphones/tablet/image-product.jpg';
+import xx59Mobile from '../../assets/product-xx59-headphones/mobile/image-product.jpg';
 import Gallery1 from '../../assets/product-xx59-headphones/desktop/image-gallery-1.jpg';
 import Gallery2 from '../../assets/product-xx59-headphones/desktop/image-gallery-2.jpg';
 import Gallery3 from '../../assets/product-xx59-headphones/desktop/image-gallery-3.jpg';
@@ -75,7 +77,9 @@ function XX59() {
                     </p>
             </div>
             <div className="product-page-row-container-left">
-                <img src={xx59} alt="headphones" className="product-image" />
+            <img src={xx59Desktop} alt="headphones" className="product-image-desktop" />
+            <img src={xx59Tablet} alt="headphones" className="product-image-tablet" />
+            <img src={xx59Mobile} alt="headphones" className="product-image-mobile" />
                 <div className="text-container">
                         <h2 className="banner-header">XX59 Headphones</h2>
                         <p className="banner-body">Enjoy your audio almost anywhere and customize it to your specific tastes with the XX59 headphones. 

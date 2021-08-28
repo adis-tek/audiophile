@@ -3,7 +3,9 @@ import './zx9.scss';
 import { Link, NavLink } from 'react-router-dom';
 import ProductTrio from '../../components/product-trio/productTrio';
 import BestGear from '../../components/best-gear/bestGear';
-import zx9 from '../../assets/product-zx9-speaker/desktop/image-product.jpg';
+import zx9Desktop from '../../assets/product-zx9-speaker/desktop/image-product.jpg';
+import zx9Tablet from '../../assets/product-zx9-speaker/tablet/image-product.jpg';
+import zx9Mobile from '../../assets/product-zx9-speaker/mobile/image-product.jpg';
 import Gallery1 from '../../assets/product-zx9-speaker/desktop/image-gallery-1.jpg';
 import Gallery2 from '../../assets/product-zx9-speaker/desktop/image-gallery-2.jpg';
 import Gallery3 from '../../assets/product-zx9-speaker/desktop/image-gallery-3.jpg';
@@ -74,7 +76,9 @@ function ZX9() {
                     </p>
             </div>
             <div className="product-page-row-container-left">
-                <img src={zx9} alt="headphones" className="product-image" />
+            <img src={zx9Desktop} alt="headphones" className="product-image-desktop" />
+            <img src={zx9Tablet} alt="headphones" className="product-image-tablet" />
+            <img src={zx9Mobile} alt="headphones" className="product-image-mobile" />
                 <div className="text-container">
                 <p className="overline">NEW PRODUCT</p>
                         <h2 className="banner-header">ZX9 SPEAKER</h2>

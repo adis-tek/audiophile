@@ -3,7 +3,9 @@ import './yx1.scss';
 import { Link, NavLink } from 'react-router-dom';
 import ProductTrio from '../../components/product-trio/productTrio';
 import BestGear from '../../components/best-gear/bestGear';
-import yx1 from '../../assets/product-yx1-earphones/desktop/image-product.jpg';
+import yx1Desktop from '../../assets/product-yx1-earphones/desktop/image-product.jpg';
+import yx1Tablet from '../../assets/product-yx1-earphones/tablet/image-product.jpg';
+import yx1Mobile from '../../assets/product-yx1-earphones/mobile/image-product.jpg';
 import Gallery1 from '../../assets/product-yx1-earphones/desktop/image-gallery-1.jpg';
 import Gallery2 from '../../assets/product-yx1-earphones/desktop/image-gallery-2.jpg';
 import Gallery3 from '../../assets/product-yx1-earphones/desktop/image-gallery-3.jpg';
@@ -73,7 +75,9 @@ function YX1() {
                     </p>
             </div>
             <div className="product-page-row-container-left">
-                <img src={yx1} alt="headphones" className="product-image" />
+            <img src={yx1Desktop} alt="headphones" className="product-image-desktop" />
+            <img src={yx1Tablet} alt="headphones" className="product-image-tablet" />
+            <img src={yx1Mobile} alt="headphones" className="product-image-mobile" />
                 <div className="text-container">
                 <p className="overline">NEW PRODUCT</p>
                         <h2 className="banner-header">YX1 WIRELESS HEADPHONES</h2>
