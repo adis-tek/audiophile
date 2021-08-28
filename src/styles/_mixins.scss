@@ -239,18 +239,34 @@
       align-items: flex-start;
       width: 40%;
       height: 380px;
+      @media screen and (max-width: 1025px) {
+        justify-content: center;
+        height: 100%;
+      }
       .overline {
         color: rgb(216, 125, 74);
+        @media screen and (max-width: 1025px) {
+          margin: 0px 0px 30px 0px;
+        }
       }
       .banner-header {
         position: relative;
+        @media screen and (max-width: 1025px) {
+          margin: 0px 0px 40px 0px;
+        }
       }
       .banner-body {
         position: relative;
+        @media screen and (max-width: 1025px) {
+          margin: 0px 0px 50px 0px;
+        }
       }
       .price {
         position: relative;
         margin: 15px 0px;
+        @media screen and (max-width: 1025px) {
+          margin: 0px 0px 30px 0px;
+        }
       }
       .button-container {
         position: relative;
@@ -262,6 +278,7 @@
         height: auto;
         @media screen and (max-width: 1025px) {
           width: 85%;
+          margin: 0px 0px 30px 0px;
         }
         .quantity-button-container {
           position: relative;
@@ -331,6 +348,7 @@
       height: 100%;
       @media screen and (max-width: 1025px) {
         width: 100%;
+        margin: 4% 0% 7% 0%;
       }
       .features-header {
         position: relative;
