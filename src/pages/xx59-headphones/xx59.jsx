@@ -6,9 +6,12 @@ import BestGear from '../../components/best-gear/bestGear';
 import xx59Desktop from '../../assets/product-xx59-headphones/desktop/image-product.jpg';
 import xx59Tablet from '../../assets/product-xx59-headphones/tablet/image-product.jpg';
 import xx59Mobile from '../../assets/product-xx59-headphones/mobile/image-product.jpg';
-import Gallery1 from '../../assets/product-xx59-headphones/desktop/image-gallery-1.jpg';
-import Gallery2 from '../../assets/product-xx59-headphones/desktop/image-gallery-2.jpg';
-import Gallery3 from '../../assets/product-xx59-headphones/desktop/image-gallery-3.jpg';
+import Gallery1Desktop from '../../assets/product-xx59-headphones/desktop/image-gallery-1.jpg';
+import Gallery1Mobile from '../../assets/product-xx59-headphones/mobile/image-gallery-1.jpg';
+import Gallery2Desktop from '../../assets/product-xx59-headphones/desktop/image-gallery-2.jpg';
+import Gallery2Mobile from '../../assets/product-xx59-headphones/mobile/image-gallery-2.jpg';
+import Gallery3Desktop from '../../assets/product-xx59-headphones/desktop/image-gallery-3.jpg';
+import Gallery3Mobile from '../../assets/product-xx59-headphones/mobile/image-gallery-3.jpg';
 import Suggestion1Desktop from '../../assets//shared/desktop/image-xx99-mark-two-headphones.jpg';
 import Suggestion1Mobile from '../../assets//shared/mobile/image-xx99-mark-two-headphones.jpg';
 import Suggestion2Desktop from '../../assets//shared/desktop/image-xx99-mark-one-headphones.jpg';
@@ -141,11 +144,14 @@ function XX59() {
             </div>
             <div className="gallery-container">
                 <div className="double-photos-container">
-                <img src={Gallery1} alt="Product Photo" className="double-photo" />
-                <img src={Gallery2} alt="Product Photo" className="double-photo" />
+                <img src={Gallery1Desktop} alt="Product Photo" className="double-photo-desktop" />
+                <img src={Gallery1Mobile} alt="Product Photo" className="double-photo-mobile" />
+                <img src={Gallery2Desktop} alt="Product Photo" className="double-photo-desktop" />
+                <img src={Gallery2Mobile} alt="Product Photo" className="double-photo-mobile" />
                 </div>
                 <div className="single-photo-container">
-                <img src={Gallery3} alt="Product Photo" className="single-photo" />
+                <img src={Gallery3Desktop} alt="Product Photo" className="single-photo-desktop" /> 
+                <img src={Gallery3Mobile} alt="Product Photo" className="single-photo-mobile" /> 
                 </div>
             </div>
             <div className="suggestions-container">
