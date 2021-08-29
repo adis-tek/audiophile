@@ -9,9 +9,12 @@ import MarkIMobile from '../../assets/product-xx99-mark-one-headphones/mobile/im
 import Gallery1 from '../../assets/product-xx99-mark-one-headphones/desktop/image-gallery-1.jpg';
 import Gallery2 from '../../assets/product-xx99-mark-one-headphones/desktop/image-gallery-2.jpg';
 import Gallery3 from '../../assets/product-xx99-mark-one-headphones/desktop/image-gallery-3.jpg';
-import Suggestion1 from '../../assets//shared/desktop/image-xx99-mark-two-headphones.jpg';
-import Suggestion2 from '../../assets//shared/desktop/image-xx59-headphones.jpg';
-import Suggestion3 from '../../assets//shared/desktop/image-zx9-speaker.jpg';
+import Suggestion1Desktop from '../../assets//shared/desktop/image-xx99-mark-two-headphones.jpg';
+import Suggestion1Mobile from '../../assets//shared/mobile/image-xx99-mark-two-headphones.jpg';
+import Suggestion2Desktop from '../../assets//shared/desktop/image-xx59-headphones.jpg';
+import Suggestion2Mobile from '../../assets//shared/mobile/image-xx59-headphones.jpg';
+import Suggestion3Desktop from '../../assets//shared/desktop/image-zx9-speaker.jpg';
+import Suggestion3Mobile from '../../assets//shared/mobile/image-zx9-speaker.jpg';
 
 
 
@@ -146,7 +149,8 @@ function XX99MarkOne() {
                 <h3 className="suggestions-header">YOU MAY ALSO LIKE</h3>
                 <div className="suggestions-trio">
                     <div className="suggestion">
-                        <img src={Suggestion1} alt="XX99 Mark II headphones" className="suggestion-image" />
+                        <img src={Suggestion1Desktop} alt="XX99 Mark II headphones" className="suggestion-image-desktop" />
+                        <img src={Suggestion1Mobile} alt="XX99 Mark II headphones" className="suggestion-image-mobile" />
                         <h3 className="product-title">XX99 MARK II</h3>
                         <NavLink exact activeClassName="active" to="/headphones/mark-two">
                         <button className="banner-button">
@@ -155,7 +159,8 @@ function XX99MarkOne() {
                         </NavLink>
                     </div>
                     <div className="suggestion">
-                        <img src={Suggestion2} alt="XX59 headphones" className="suggestion-image" />
+                    <img src={Suggestion2Desktop} alt="XX59 headphones" className="suggestion-image-desktop" />
+                    <img src={Suggestion2Mobile} alt="XX59 headphones" className="suggestion-image-mobile" />
                         <h3 className="product-title">XX59</h3>
                         <NavLink exact activeClassName="active" to="/headphones/xx59">
                         <button className="banner-button">
@@ -164,7 +169,8 @@ function XX99MarkOne() {
                         </NavLink>
                     </div>
                     <div className="suggestion">
-                        <img src={Suggestion3} alt="ZX9 Speaker" className="suggestion-image" />
+                    <img src={Suggestion3Desktop} alt="ZX9 Speaker" className="suggestion-image-desktop" />
+                    <img src={Suggestion3Mobile} alt="ZX9 Speaker" className="suggestion-image-mobile" />
                         <h3 className="product-title">ZX9 Speaker</h3>
                         <NavLink exact activeClassName="active" to="/speakers/zx9">
                         <button className="banner-button">
