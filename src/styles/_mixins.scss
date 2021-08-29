@@ -382,6 +382,9 @@
         justify-content: space-between;
         width: 100%;
       }
+      @media screen and (max-width: 768px) {
+        flex-direction: column;
+      }
       .box-header-container {
         position: relative;
         display: flex;
@@ -402,6 +405,10 @@
             top: 0;
             width: 100%;
             height: auto;
+          }
+          @media screen and (max-width: 768px) {
+            position: relative;
+            width: 100%;
           }
         }
       }
