@@ -1,12 +1,14 @@
 import React, { useState, useEffect } from 'react';
 import { Link, NavLink } from 'react-router-dom';
 import './nav.scss';
+import MobileMenu from '../../assets/shared/tablet/icon-hamburger.svg';
 import Logo from '../../assets/shared/desktop/logo.svg';
 import Cart from '../../assets/shared/desktop/icon-cart.svg';
 import MarkII from '../../assets/product-xx99-mark-two-headphones/desktop/image-product.jpg';
 import ZX9 from '../../assets/category-speakers/desktop/image-zx9.jpg';
 
 function Nav() {
+    const [openMobileMenu, setOpenMobileMenu] = useState(false);
     const [cartWindow, setCartWindow] = useState(JSON.parse(localStorage.getItem('cartWindow')) || false);
     const [cart, setCart] = useState(JSON.parse(localStorage.getItem('cart')) || []);
     const [openCart, setOpenCart] = useState(JSON.parse(localStorage.getItem('openCart')) || false);
@@ -114,6 +116,15 @@ function Nav() {
         }
     }
 
+        {/* Toggle Function */}
+        function toggleMobileMenu() {
+            if (openMobileMenu === true) {
+                setOpenMobileMenu(false)
+            } else {
+                setOpenMobileMenu(true)
+            }
+        }
+
     function removeAll() {
         setCart([]);
         // setOpenCart(false);
@@ -170,7 +181,7 @@ function Nav() {
         }
     }, [idMinus]);
 
-
+ 
 
     console.log(doubleRunCounter + "Double run")
 
@@ -183,8 +194,12 @@ function Nav() {
             <link rel="icon" type="image/png" sizes="32x32" href="./assets/favicon-32x32.png" />
             </head>
                 <div className="nav">
+                <img src={MobileMenu} alt="mobile menu" className="mobile-menu" onClick={toggleMobileMenu} />
+                    <NavLink exact activeClassName="active" to="/" className="desktop-logo-link">
+                    <img src={Logo} alt="audiophile logo" className="logo-desktop" />
+                    </NavLink>
                     <NavLink exact activeClassName="active" to="/">
-                    <img src={Logo} alt="audiophile logo" className="logo" />
+                    <img src={Logo} alt="audiophile logo" className="logo-mobile" />
                     </NavLink>
                     <div className="page-container">
                         <ul>
@@ -210,6 +225,13 @@ function Nav() {
                     <img src={Cart} alt="cart" className="cart" onClick={toggleCart} />
                 </div>
         </div>
+
+        {openMobileMenu && (
+            <div className="mobile-menu-container">
+                <h1>Mobile Menu Open</h1>
+            </div>
+        )}
+
         {cartWindow && ( 
             <>
             <div className="backdrop" onClick={toggleCart}></div>
