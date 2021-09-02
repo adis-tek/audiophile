@@ -22,6 +22,12 @@
       background-size: cover;
       height: 729px;
     }
+    @media screen and (max-width: styles.$screen-sm-max) {
+      background-image: url("../../assets/home/mobile/image-header.jpg");
+      background-size: cover;
+      background-position: center;
+      height: 600px;
+    }
   }
   .banner-text-container {
     position: relative;
