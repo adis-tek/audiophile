@@ -1,22 +1,17 @@
 @use '../../styles';
 
 .nav-container {
-  position: relative;
+  position: absolute;
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
   width: 100vw;
   height: 100px;
-  z-index: auto;
+  top: 0;
   overflow: hidden;
-  background-color: styles.$black;
-  @media screen and (max-width: styles.$screen-md-max) {
-    position: absolute;
-    top: 0;
-    background-color: transparent;
-    z-index: 9998;
-  }
+  background-color: transparent;
+  z-index: 9998;
   .nav {
     position: relative;
     display: flex;
@@ -35,7 +30,11 @@
       width: 100vw;
     }
     .desktop-logo-link {
-      display: none;
+      position: relative;
+      display: block;
+      @media screen and (max-width: styles.$screen-md-max) {
+        display: none;
+      }
     }
     .mobile-menu {
       display: none;
@@ -137,9 +136,14 @@
   top: 100px;
   background-color: rgba(0, 0, 0, 0.5);
   width: 100%;
+  max-width: 1366px;
   height: 87.5%;
   z-index: 9998;
   overflow: hidden;
+  left: 0;
+  right: 0;
+  margin-left: auto;
+  margin-right: auto;
 }
 .cart-window-container {
   position: absolute;
@@ -156,6 +160,12 @@
   border-radius: 15px;
   padding: 30px 0px;
   backdrop-filter: brightness(50%);
+  @media screen and (min-width: styles.$screen-xl-max) {
+    left: 0;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
+  }
   @media screen and (max-width: styles.$screen-md-max) {
     left: 0;
     right: 0;
