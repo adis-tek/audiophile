@@ -21,7 +21,7 @@ import Listener from '../../assets/shared/desktop/image-best-gear.jpg';
 
 function home() {
     return ( 
-    <>
+    <> 
         <div className="home-container">
         <head>
         <meta charset="UTF-8" />
