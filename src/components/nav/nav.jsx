@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link, NavLink } from 'react-router-dom';
 import './nav.scss';
-import ProductTrio from '../../components/product-trio/productTrio';
+import ProductTrioMobile from '../../components/product-trio-mobile/productTrioMenu';
 import MobileMenu from '../../assets/shared/tablet/icon-hamburger.svg';
 import Logo from '../../assets/shared/desktop/logo.svg';
 import Cart from '../../assets/shared/desktop/icon-cart.svg';
@@ -231,7 +231,7 @@ function Nav() {
             <div className="mobile-menu-backdrop">
             <div className="mobile-menu-container">
                 <div className="mobile-menu-inner-container">
-                <ProductTrio />
+                <ProductTrioMobile />
                 </div>
             </div>
             </div>
