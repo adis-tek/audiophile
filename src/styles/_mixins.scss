@@ -672,12 +672,18 @@
     width: 100%;
     height: auto;
     margin: 20px 0px 0px 0px;
+    @media screen and (max-width: 550px) {
+      flex-direction: column;
+    }
     .input-container {
       position: relative;
       display: flex;
       flex-direction: column;
       width: 48.5%;
       height: auto;
+      @media screen and (max-width: 550px) {
+        width: 97.5%;
+      }
       input {
         display: inline-block;
         line-height: 0;
