@@ -5,6 +5,7 @@
   width: 100vw;
   z-index: auto;
   overflow: hidden;
+  @include styles.blackBlockProductPage;
   .headphones-body {
     position: relative;
     @include styles.flexCenter(center, column);
