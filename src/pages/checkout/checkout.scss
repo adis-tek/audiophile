@@ -6,12 +6,14 @@
   z-index: auto;
   overflow: hidden;
   background-color: styles.$checkout;
+  @include styles.blackBlockProductPage;
   .checkout-body {
     position: relative;
     @include styles.flexCenter(center, column);
     width: 80vw;
     max-width: 1092px;
     z-index: 0;
+    margin: 35px 0px 0px 0px;
     @media screen and (max-width: styles.$screen-md-max) {
       width: 90vw;
     }
@@ -26,6 +28,9 @@
       justify-content: space-between;
       width: 100%;
       height: auto;
+      @media screen and (max-width: styles.$screen-lg-max) {
+        flex-direction: column;
+      }
       .checkout-form {
         position: relative;
         display: flex;
@@ -34,6 +39,9 @@
         justify-content: flex-start;
         width: 70%;
         height: 100%;
+        @media screen and (max-width: styles.$screen-lg-max) {
+          width: 100%;
+        }
         .checkout-form-container {
           position: relative;
           display: flex;
@@ -41,8 +49,11 @@
           align-items: flex-start;
           width: 75%;
           height: 100%;
-          padding: 60px 60px;
+          padding: 60px;
           background-color: white;
+          @media screen and (max-width: styles.$screen-lg-max) {
+            width: 100%;
+          }
           .checkout-header {
             position: relative;
             margin: 0px 0px 0px 0px;
@@ -61,6 +72,9 @@
             width: 100%;
             height: auto;
             @include styles.formLabelInput;
+            @media screen and (max-width: styles.$screen-lg-max) {
+              width: 85%;
+            }
           }
           .address-form {
             position: relative;
@@ -69,6 +83,9 @@
             width: 100%;
             height: auto;
             margin: 20px 0px 0px 0px;
+            @media screen and (max-width: styles.$screen-lg-max) {
+              width: 85%;
+            }
             .single-input {
               position: relative;
               display: flex;
@@ -123,6 +140,9 @@
             flex-direction: column;
             width: 100%;
             height: auto;
+            @media screen and (max-width: styles.$screen-lg-max) {
+              width: 85%;
+            }
             .payment {
               display: inline-block;
               font-size: 12px;
@@ -208,6 +228,11 @@
     align-items: flex-start;
     width: 30%;
     height: 100%;
+    @media screen and (max-width: styles.$screen-lg-max) {
+      width: 100%;
+      margin: 40px 0px 0px 0px;
+      border-radius: 10px;
+    }
     .summary {
       position: relative;
       display: flex;
@@ -217,6 +242,9 @@
       width: 100%;
       height: auto;
       background: styles.$white;
+      @media screen and (max-width: styles.$screen-lg-max) {
+        border-radius: 10px;
+      }
       .summary-header {
         font-size: 18px;
         margin: 0px 0px 20px 0px;

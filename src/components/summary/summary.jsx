@@ -76,7 +76,7 @@ function Summary() {
 
 
     return (
-<>
+<> 
     <div className="summary-inner-container">
     <h3 className="summary-header">SUMMARY</h3>
     {cart.map((product, index) => (
@@ -85,6 +85,13 @@ function Summary() {
         <div className="title-container">
         <h4 className="product-title">{product.name}</h4>
         <h5 className="product-price">${product.cost}</h5>
+        </div>
+        <div className="mobile-container">
+        <img src={product?.image} alt="product image" className="product-image-mobile" />
+        <div className="title-container-mobile">
+        <h4 className="product-title-mobile">{product.name}</h4>
+        <h5 className="product-price-mobile">${product.cost}</h5>
+        </div>
         </div>
         <div className="counter">
             <p className="minus">-</p>
