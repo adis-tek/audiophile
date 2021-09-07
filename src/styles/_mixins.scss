@@ -674,6 +674,7 @@
     margin: 20px 0px 0px 0px;
     @media screen and (max-width: 550px) {
       flex-direction: column;
+      margin: -1.5px 0px -1.5px 0px;
     }
     .input-container {
       position: relative;
@@ -683,6 +684,7 @@
       height: auto;
       @media screen and (max-width: 550px) {
         width: 97.5%;
+        margin: 15px 0px 0px 0px;
       }
       input {
         display: inline-block;
