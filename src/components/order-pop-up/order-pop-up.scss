@@ -83,11 +83,13 @@
           height: 60%;
           background-color: styles.$dark-grey;
           @media screen and (max-width: 550px) {
-            height: 350px;
-            margin: 0px 0px 20px 0px;
+            width: 92.5%;
+            height: 500px;
+            margin: 10px 0px 20px 0px;
+            top: 5px;
           }
           @media screen and (max-width: 450px) {
-            width: 200px;
+            // width: 200px;
           }
           .grey-area-container {
             position: relative;
@@ -103,6 +105,9 @@
               display: block;
               width: 50px;
               height: 50px;
+              @media screen and (max-width: styles.$screen-sm-max) {
+                display: none;
+              }
             }
             .product-details {
               position: relative;
@@ -110,16 +115,59 @@
               flex-direction: column;
               justify-content: center;
               align-items: flex-start;
+              @media screen and (max-width: styles.$screen-sm-max) {
+                display: none;
+              }
               .product-title {
                 font-size: 15px;
                 line-height: 25px;
                 margin: 0px 2.5px;
+                @media screen and (max-width: styles.$screen-sm-max) {
+                  display: none;
+                }
               }
               .product-price {
                 font-size: 14px;
                 line-height: 25px;
                 color: styles.$darker-dark-grey;
                 margin: 0px 2.5px;
+                @media screen and (max-width: styles.$screen-sm-max) {
+                  display: none;
+                }
+              }
+            }
+            .mobile-pairing {
+              display: none;
+              @media screen and (max-width: styles.$screen-sm-max) {
+                position: relative;
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+              }
+              .product-image-mobile {
+                position: relative;
+                display: block;
+                width: 50px;
+                height: 50px;
+                margin: 0px 20px 0px 0px;
+              }
+              .product-details-mobile {
+                position: relative;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: flex-start;
+                .product-title-mobile {
+                  font-size: 15px;
+                  line-height: 25px;
+                  margin: 0px 2.5px;
+                }
+                .product-price-mobile {
+                  font-size: 14px;
+                  line-height: 25px;
+                  color: styles.$darker-dark-grey;
+                  margin: 0px 2.5px;
+                }
               }
             }
             .quantity-container {
@@ -171,6 +219,7 @@
           @media screen and (max-width: 550px) {
             width: 100%;
             height: 250px;
+            padding: 15px 0px 25px 0px;
           }
 
           .black-area-container {

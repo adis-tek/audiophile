@@ -47,6 +47,13 @@ function OrderPopUp() {
                         <h3 className="product-title">{cart[0].name}</h3>
                         <h4 className="product-price">${cart[0].cost}</h4>
                     </div>
+                    <div className="mobile-pairing">
+                    <img src={cart[0].image} alt="product" className="product-image-mobile" />
+                    <div className="product-details-mobile">
+                        <h3 className="product-title-mobile">{cart[0].name}</h3>
+                        <h4 className="product-price-mobile">${cart[0].cost}</h4>
+                    </div>
+                    </div>
                     <div className="quantity-container">
                         <h4 className="quantity">x{cart[0].quantity.quantity}</h4>
                     </div>
