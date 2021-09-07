@@ -112,14 +112,6 @@ function Summary() {
     <p className="final-total-variable">${quantitySum + (shipping * 1.25)}</p>
     </div>
 </div>
-
-    {/* {order && (
-    <div className="backdrop-order">
-    <div className="order-container">
-
-    </div>
-    </div>
-    )} */}
 </>
     )
 }
