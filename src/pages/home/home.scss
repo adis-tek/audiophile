@@ -145,13 +145,19 @@
         z-index: 9999;
         object-fit: cover;
         @media screen and (max-width: styles.$screen-lg-max) {
-          left: 36%;
+          left: 0;
+          right: 0;
+          margin-left: auto;
+          margin-right: auto;
           top: 70px;
           width: 197px;
           height: 237px;
         }
         @media screen and (max-width: styles.$screen-md-max) {
-          left: 33%;
+          left: 0;
+          right: 0;
+          margin-left: auto;
+          margin-right: auto;
           top: 60px;
           width: 180px;
           height: auto;
@@ -189,6 +195,12 @@
           width: 50%;
           top: 160px;
         }
+        @media screen and (max-width: styles.$screen-md-max) {
+          top: 120px;
+        }
+        @media screen and (max-width: styles.$screen-sm-max) {
+          width: 90%;
+        }
       }
       .banner-header {
         color: styles.$white;
@@ -200,6 +212,9 @@
         opacity: 75%;
         width: 100%;
         margin: 0px 0px 0px 0px;
+        @media screen and (max-width: styles.$screen-sm-max) {
+          margin: 15px 0px;
+        }
       }
       .banner-button {
         position: relative;
