@@ -93,10 +93,8 @@ function Summary() {
         <h5 className="product-price-mobile">${product.cost}</h5>
         </div>
         </div>
-        <div className="counter">
-            <p className="minus">-</p>
-            <p className="quantity">{product.quantity.quantity}</p>
-            <p className="plus" onClick={() => setId(product.id) || (quantityPlus())}>+</p>
+        <div className="quantity-container">
+            <p className="quantity">x{product.quantity.quantity}</p>
         </div>
     </div>
     ))}

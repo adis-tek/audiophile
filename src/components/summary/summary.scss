@@ -82,22 +82,16 @@
         }
       }
     }
-    .counter {
+    .quantity-container {
       position: relative;
       display: flex;
       flex-direction: row;
-      justify-content: space-around;
+      justify-content: flex-end;
       width: 96px;
       height: 32px;
-      background-color: styles.$dark-grey;
-      border-radius: 2px;
-      .minus {
-      }
       .quantity {
-        color: styles.$black;
+        color: styles.$darker-dark-grey;
         font-weight: 700;
-      }
-      .plus {
       }
     }
   }
