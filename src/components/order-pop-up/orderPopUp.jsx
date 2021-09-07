@@ -78,7 +78,7 @@ function OrderPopUp() {
         </div>
     </div>
 </>
-)};
+)}
 </>
 )
 }
