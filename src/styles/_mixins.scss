@@ -229,6 +229,7 @@
       width: 50%;
       height: auto;
       object-fit: cover;
+      border-radius: 10px;
       @media screen and (max-width: 1025px) {
         display: none;
       }
@@ -241,6 +242,7 @@
         width: 50%;
         height: auto;
         object-fit: cover;
+        border-radius: 10px;
       }
       @media screen and (max-width: 768px) {
         display: none;
@@ -254,6 +256,7 @@
         width: 100%;
         height: auto;
         object-fit: cover;
+        border-radius: 10px;
       }
     }
 

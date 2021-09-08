@@ -46,6 +46,7 @@
   .best-gear-image-desktop {
     position: relative;
     width: 45%;
+    border-radius: 10px;
     @media screen and (max-width: styles.$screen-lg-max) {
       display: none;
     }
@@ -56,6 +57,7 @@
       position: relative;
       display: block;
       width: 90%;
+      border-radius: 10px;
     }
     @media screen and (max-width: styles.$screen-md-max) {
       display: none;
@@ -67,6 +69,7 @@
       position: relative;
       display: block;
       width: 100%;
+      border-radius: 10px;
     }
   }
 }
