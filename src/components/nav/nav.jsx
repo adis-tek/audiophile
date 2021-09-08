@@ -7,7 +7,11 @@ import Logo from '../../assets/shared/desktop/logo.svg';
 import Cart from '../../assets/shared/desktop/icon-cart.svg';
 import MarkII from '../../assets/product-xx99-mark-two-headphones/desktop/image-product.jpg';
 import ZX9 from '../../assets/category-speakers/desktop/image-zx9.jpg';
-
+import HeadPhones from '../../assets/shared/desktop/image-headphones.png';
+import Speaker from '../../assets/shared/desktop/image-speakers.png';
+import Earphones from '../../assets/shared/desktop/image-earphones.png';
+import RightArrow from '../../assets/shared/desktop/icon-arrow-right.svg';
+ 
 function Nav() {
     const [openMobileMenu, setOpenMobileMenu] = useState(false);
     const [cartWindow, setCartWindow] = useState(JSON.parse(localStorage.getItem('cartWindow')) || false);
@@ -118,13 +122,17 @@ function Nav() {
     }
 
         {/* Toggle Function */}
-        function toggleMobileMenu() {
-            if (openMobileMenu === true) {
-                setOpenMobileMenu(false)
-            } else {
-                setOpenMobileMenu(true)
-            }
+    function toggleMobileMenu() {
+        if (openMobileMenu === true) {
+            setOpenMobileMenu(false)
+        } else {
+            setOpenMobileMenu(true)
         }
+    }
+
+    function closeMenuOnLoad() {
+        setOpenMobileMenu(false)
+    }
 
     function removeAll() {
         setCart([]);
@@ -231,7 +239,36 @@ function Nav() {
             <div className="mobile-menu-backdrop">
             <div className="mobile-menu-container">
                 <div className="mobile-menu-inner-container">
-                <ProductTrioMobile />
+                {/* <ProductTrioMobile /> */}
+                <div className="product-trio-mobile">
+                    <div className="product-container-mobile"  id="p1-mobile">
+                        <div className="text-container-mobile">
+                        <img src={HeadPhones} alt="headphones" className="image-mobile" />
+                            <h4 className="product-header-mobile">HEADPHONES</h4>
+                            <p className="shop-mobile">
+                            <Link to="/headphones" onClick={closeMenuOnLoad}> SHOP </Link>
+                                 <img src={RightArrow} alt="right-arrow" className="right-arrow-mobile" /></p>
+                        </div>
+                    </div>
+                    <div className="product-container-mobile"  id="p2-mobile">
+                        <div className="text-container-mobile">
+                        <img src={Speaker} alt="headphones" className="image-mobile" />
+                            <h4 className="product-header-mobile">SPEAKERS</h4>
+                            <p className="shop-mobile">
+                            <Link to="/speakers" onClick={closeMenuOnLoad}> SHOP </Link>
+                                 <img src={RightArrow} alt="right-arrow" className="right-arrow-mobile" /></p>
+                        </div>
+                    </div>
+                    <div className="product-container-mobile"  id="p3-mobile">
+                        <div className="text-container-mobile">
+                        <img src={Earphones} alt="headphones" className="image-mobile" />
+                            <h4 className="product-header-mobile">EARPHONES</h4>
+                            <p className="shop-mobile">
+                            <Link to="/earphones" onClick={closeMenuOnLoad}> SHOP </Link> 
+                            <img src={RightArrow} alt="right-arrow" className="right-arrow-mobile" /></p>
+                        </div>
+                    </div>
+                </div>
                 </div>
             </div>
             </div>
