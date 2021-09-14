@@ -63,7 +63,7 @@
       }
       .overline {
         color: styles.$white;
-        opacity: 50%;
+        opacity: 0.5;
         @media screen and (max-width: styles.$screen-lg-max) {
           text-align: center;
           width: 100%;
@@ -83,7 +83,7 @@
       }
       .banner-body {
         color: styles.$white;
-        opacity: 75%;
+        opacity: 0.75;
         width: 75%;
         margin: 0px 0px 0px 0px;
         @media screen and (max-width: styles.$screen-lg-max) {
@@ -209,7 +209,7 @@
       }
       .banner-body {
         color: styles.$white;
-        opacity: 75%;
+        opacity: 0.75;
         width: 100%;
         margin: 0px 0px 0px 0px;
         @media screen and (max-width: styles.$screen-sm-max) {
