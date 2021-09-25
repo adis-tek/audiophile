@@ -1,109 +1,121 @@
-@use '../../styles';
+@use "../../styles";
 
 .home-container {
   @include styles.flexCenter(center, column);
   width: 100vw;
   z-index: auto;
   overflow: hidden;
-  .home-banner {
-    position: relative;
-    @include styles.flexCenter(center, column);
-    background-image: url("../../assets/home/desktop/image-hero.jpg");
-    width: 100%;
-    height: 730px;
-    max-width: styles.$screen-xl-max;
-    @media screen and (max-width: styles.$screen-lg-max) {
-      background-image: url("../../assets/home/tablet/image-header.jpg");
-      background-size: cover;
-      height: 729px;
-    }
-    @media screen and (max-width: styles.$screen-md-max) {
-      background-image: url("../../assets/home/tablet/image-header.jpg");
-      background-size: cover;
-      height: 729px;
-    }
-    @media screen and (max-width: styles.$screen-sm-max) {
-      background-image: url("../../assets/home/mobile/image-header.jpg");
-      background-size: cover;
-      background-position: center;
-      height: 600px;
-    }
-  }
-  .banner-text-container {
+  .desktop-background-color {
     position: relative;
     display: flex;
-    flex-direction: column;
+    align-items: center;
     justify-content: center;
-    align-items: flex-start;
-    width: 75%;
-    height: 60%;
-    @media screen and (max-width: styles.$screen-lg-max) {
-      justify-content: center;
-      align-items: center;
+    background-color: rgba(25, 25, 25, 1);
+    width: 100vw;
+    height: 730px;
+    // @media screen and (max-width: styles.$screen-lg-max) {
+    //   display: none;
+    // }
+    .home-banner {
+      position: relative;
+      @include styles.flexCenter(center, column);
+      background-image: url("../../assets/home/desktop/image-hero.jpg");
       width: 100%;
+      height: 730px;
+      max-width: styles.$screen-xl-max;
+      @media screen and (max-width: styles.$screen-lg-max) {
+        background-image: url("../../assets/home/tablet/image-header.jpg");
+        background-size: cover;
+        height: 729px;
+      }
+      @media screen and (max-width: styles.$screen-md-max) {
+        background-image: url("../../assets/home/tablet/image-header.jpg");
+        background-size: cover;
+        height: 729px;
+      }
+      @media screen and (max-width: styles.$screen-sm-max) {
+        background-image: url("../../assets/home/mobile/image-header.jpg");
+        background-size: cover;
+        background-position: center;
+        height: 600px;
+      }
     }
-    .banner-text {
+    .banner-text-container {
       position: relative;
       display: flex;
       flex-direction: column;
-      justify-content: space-around;
+      justify-content: center;
       align-items: flex-start;
-      width: 50%;
-      height: 100%;
-      margin: 120px 0px 0px 0px;
+      width: 75%;
+      height: 60%;
       @media screen and (max-width: styles.$screen-lg-max) {
+        justify-content: center;
         align-items: center;
-        text-align: center;
+        width: 100%;
       }
-      @media screen and (max-width: styles.$screen-md-max) {
-        width: 60%;
-      }
-      @media screen and (max-width: styles.$screen-sm-max) {
-        width: 85%;
-      }
-      .overline {
-        color: styles.$white;
-        opacity: 0.5;
-        @media screen and (max-width: styles.$screen-lg-max) {
-          text-align: center;
-          width: 100%;
-        }
-      }
-      .banner-header {
-        color: styles.$white;
-        margin: 0px 0px 0px 0px;
-        text-transform: uppercase;
-        @media screen and (max-width: styles.$screen-lg-max) {
-          text-align: center;
-          width: 100%;
-        }
-        @media screen and (max-width: styles.$screen-md-max) {
-          font-size: 36px;
-        }
-      }
-      .banner-body {
-        color: styles.$white;
-        opacity: 0.75;
-        width: 75%;
-        margin: 0px 0px 0px 0px;
-        @media screen and (max-width: styles.$screen-lg-max) {
-          text-align: center;
-          width: 100%;
-        }
-      }
-      .banner-button {
+      .banner-text {
         position: relative;
-        @include styles.flexCenter(center, column);
-        width: 160px;
-        height: 48px;
-        background-color: styles.$orange;
-        margin: 0px 0px 0px 0px;
-        cursor: pointer;
-        @media screen and (max-width: styles.$screen-md-max) {
-          margin: 5px 0px 0px 0px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: flex-start;
+        width: 50%;
+        height: 100%;
+        margin: 120px 0px 0px 0px;
+        @media screen and (max-width: styles.$screen-lg-max) {
+          align-items: center;
+          text-align: center;
         }
-        .subtitle {
+        @media screen and (max-width: styles.$screen-md-max) {
+          width: 60%;
+        }
+        @media screen and (max-width: styles.$screen-sm-max) {
+          width: 85%;
+        }
+        .overline {
           color: styles.$white;
+          opacity: 0.5;
+          @media screen and (max-width: styles.$screen-lg-max) {
+            text-align: center;
+            width: 100%;
+          }
+        }
+        .banner-header {
+          color: styles.$white;
+          margin: 0px 0px 0px 0px;
+          text-transform: uppercase;
+          @media screen and (max-width: styles.$screen-lg-max) {
+            text-align: center;
+            width: 100%;
+          }
+          @media screen and (max-width: styles.$screen-md-max) {
+            font-size: 36px;
+          }
+        }
+        .banner-body {
+          color: styles.$white;
+          opacity: 0.75;
+          width: 75%;
+          margin: 0px 0px 0px 0px;
+          @media screen and (max-width: styles.$screen-lg-max) {
+            text-align: center;
+            width: 100%;
+          }
+        }
+        .banner-button {
+          position: relative;
+          @include styles.flexCenter(center, column);
+          width: 160px;
+          height: 48px;
+          background-color: styles.$orange;
+          margin: 0px 0px 0px 0px;
+          cursor: pointer;
+          @media screen and (max-width: styles.$screen-md-max) {
+            margin: 5px 0px 0px 0px;
+          }
+          .subtitle {
+            color: styles.$white;
+          }
         }
       }
     }

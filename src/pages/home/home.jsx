@@ -31,6 +31,7 @@ function home() {
         
         <title>Designo Agency</title>
         </head>
+        <div className="desktop-background-color">
         <div className="home-banner">
                 <div className="banner-text-container">
                     <div className="banner-text">
@@ -44,6 +45,7 @@ function home() {
                         </NavLink>
                     </div>
                 </div>
+        </div>
         </div>
             <body className="home-body">
             <ProductTrio />
