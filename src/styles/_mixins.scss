@@ -1,4 +1,4 @@
-@use './colors';
+@use "./colors";
 
 @mixin flexCenter($justify, $direction) {
   display: flex;
@@ -358,6 +358,7 @@
           background-color: rgb(216, 125, 74);
           width: 160px;
           height: 48px;
+          cursor: pointer;
           @media screen and (max-width: 1025px) {
             width: 190px;
           }
