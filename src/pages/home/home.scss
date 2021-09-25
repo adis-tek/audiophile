@@ -13,9 +13,6 @@
     background-color: rgba(25, 25, 25, 1);
     width: 100vw;
     height: 730px;
-    // @media screen and (max-width: styles.$screen-lg-max) {
-    //   display: none;
-    // }
     .home-banner {
       position: relative;
       @include styles.flexCenter(center, column);
