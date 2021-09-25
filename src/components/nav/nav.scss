@@ -1,4 +1,4 @@
-@use '../../styles';
+@use "../../styles";
 
 .nav-container {
   position: absolute;
@@ -197,7 +197,6 @@
   top: 100px;
   background-color: rgba(0, 0, 0, 0.5);
   width: 100%;
-  max-width: 1366px;
   height: 87.5%;
   z-index: 9998;
   overflow: hidden;
