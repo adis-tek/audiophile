@@ -1,7 +1,24 @@
 # Audiophile E-commerce Site
-This is an e-commerce store that sells audio equipment.
+This is a pretend e-commerce store that sells audio equipment.
 ## Features
+* A multi-page layout that showcases various products.
+* A fully mobile-responsive design from desktop to tablet and to mobile.
+* An integrated cart function in the nav that utilizes local storage as the database.
+* Quantity can be adjusted from the product page and in the cart itself.
+* Real-time total calculated with every quantity adjustment.
+* A full checkout page with a form and full form validation.
+* At the end there is a pop-up window after the purchase that shows your total and items.
 
+## Technology
+* This app was built using the React framework.
+* Sass styling, repeatable mixins, and variables used for additional reusability.
+* React Router is an additional dependency used for page navigation.
+
+## Lessons Learned
+* How to create a cart function on a site.
+* How to work with local storage.
+* How to verify a long form in real-time.
+* How to work with floating elements and add a dark backdrop.
 
 ---
 # Getting Started with Create React App
