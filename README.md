@@ -1,4 +1,4 @@
-# Audiophile E-commerce Site
+# Audiophile - An E-commerce Site
 This is a pretend e-commerce store that sells audio equipment.
 ## Features
 * A multi-page layout that showcases various products.
